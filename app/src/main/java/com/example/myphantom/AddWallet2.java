@@ -35,8 +35,29 @@ public class AddWallet2 extends AppCompatActivity {
                 dialog.setContentView(view2);
                 dialog.show();
                 Button importseedbtn = view2.findViewById(R.id.importseedphrasebtn);
+                importseedbtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(AddWallet2.this, RecoveryPhraseTV.class);
+                        startActivity(intent);
+                    }
+                });
                 Button importprivatebtn = view2.findViewById(R.id.btnimportprivatekey);
+                importprivatebtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(AddWallet2.this, PrivateKey.class);
+                        startActivity(intent);
+                    }
+                });
                 Button connecthardbtn = view2.findViewById(R.id.btnconnecthardwarewallets);
+                connecthardbtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(AddWallet2.this, ConnectHardwareWallet.class);
+                        startActivity(intent);
+                    }
+                });
                 ViewUtils.addPressEffect(importseedbtn);
                 ViewUtils.addPressEffect(importprivatebtn);
                 ViewUtils.addPressEffect(connecthardbtn);

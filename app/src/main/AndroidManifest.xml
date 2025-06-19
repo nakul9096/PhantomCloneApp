@@ -13,6 +13,12 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".ConnectHardwareWallet"
+            android:exported="false" />
+        <activity
+            android:name=".PrivateKey"
+            android:exported="false" />
+        <activity
             android:name=".RecoveryPhraseTV"
             android:exported="false" />
         <activity

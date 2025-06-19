@@ -7,6 +7,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_marginTop="24dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
@@ -16,6 +17,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:contentDescription="TODO"
+            android:id="@+id/backIV"
             android:src="@android:drawable/ic_menu_revert"
             android:layout_marginEnd="16dp" />
 
@@ -90,5 +92,5 @@
         android:layout_marginTop="32dp"
         android:enabled="false"
         android:textColor="#FFFFFF"
-        android:background="@drawable/rounded_button_secondary"/>
+        android:background="@drawable/rounded_button"/>
 </LinearLayout>
