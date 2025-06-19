@@ -48,23 +48,17 @@ public class AddWallet2 extends AppCompatActivity {
             BottomSheetDialog dialog = new BottomSheetDialog(this);
             dialog.setContentView(view);
             dialog.show();
-
-            // Use view.findViewById to access BottomSheet views
             LinearLayout btnGoogle = view.findViewById(R.id.btnGoogle);
             LinearLayout btnApple = view.findViewById(R.id.btnApple);
             ViewUtils.addPressEffect(btnApple);
             ViewUtils.addPressEffect(btnGoogle);
-            // Set click listeners properly
             btnGoogle.setOnClickListener(btn -> {
-                // Example Google intent
-                Uri uri = Uri.parse("https://mrdoob.com/projects/google/chrome/collapse/"); // Replace with actual Google sign-in intent
+                Uri uri = Uri.parse("https://mrdoob.com/projects/google/chrome/collapse/");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             });
-
             btnApple.setOnClickListener(btn -> {
-                // Example Apple intent
-                Uri uri = Uri.parse("https://apple.com"); // Replace with actual Apple sign-in logic
+                Uri uri = Uri.parse("https://apple.com");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             });

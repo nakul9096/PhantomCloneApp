@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
     private ImageView dot1, dot2, dot3;
     private CheckBox checkbox;
     private Button createWalletButton, alreadyHaveWallet;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,33 +50,25 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        // Set up ViewPager adapter
         List<SlideItem> slides = new ArrayList<>();
         slides.add(new SlideItem(R.raw.anim, "Welcome to Phantom", "To get started, create a new wallet or import an existing one."));
         slides.add(new SlideItem(R.raw.anim2, "Controlled by you", "Your wallet is secured with biometrics access, scam detection and 24/7 support."));
         slides.add(new SlideItem(R.raw.anim3, "The best home for your NFTs", "Manage listings, burn spam, and stay updated \n with helpful push notifications."));
-
         viewPager.setAdapter(new SlideAdapter(slides));
-
-        // Update dots on page change
         viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
                 updateDots(position);
             }
         });
-
-        // Checkbox enable buttons
         checkbox.setOnCheckedChangeListener((buttonView, isChecked) -> {
             createWalletButton.setEnabled(isChecked);
             alreadyHaveWallet.setEnabled(isChecked);
         });
     }
-
     private void updateDots(int position) {
         dot1.setImageResource(position == 0 ? R.drawable.dot_active : R.drawable.dot_inactive);
         dot2.setImageResource(position == 1 ? R.drawable.dot_active : R.drawable.dot_inactive);
         dot3.setImageResource(position == 2 ? R.drawable.dot_active : R.drawable.dot_inactive);
     }
-
 }
