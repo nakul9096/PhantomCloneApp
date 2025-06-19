@@ -15,3 +15,7 @@ CHANGES DONE:
      (Added more enhanced UI)
   2) RecoveryPhrasePage - https://github.com/nakul9096/PhantomCloneApp/blob/master/Screenshots/RecoveryPhrasePage(19).jpg
      (And improved other components)
+  3) RecoveryPhraseTvPage ( Import option - 1)
+  4) ImportPrivateKeyPage ( Import option - 2)
+  5) ConnectHardwareWalletPage ( Import option - 3)
+  6) Added backButtons i.e ImageViews (HitBack logic added)
