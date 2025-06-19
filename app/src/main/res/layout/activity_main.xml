@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1E1E1E"
+    android:padding="24dp">
+
+    <!-- ViewPager2 for onboarding slides -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="-40dp"
+        android:clipToPadding="false" />
+
+    <!-- Pagination dots (custom if needed) -->
+    <LinearLayout
+        android:id="@+id/paginationDotsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_below="@id/viewPager"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/dot1"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:src="@drawable/dot_active"
+            android:layout_marginEnd="8dp" />
+
+        <ImageView
+            android:id="@+id/dot2"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:src="@drawable/dot_inactive"
+            android:layout_marginEnd="8dp" />
+
+        <ImageView
+            android:id="@+id/dot3"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:src="@drawable/dot_inactive" />
+    </LinearLayout>
+
+    <!-- Checkbox to enable buttons -->
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/paginationDotsLayout"
+        android:layout_marginTop="10dp"
+        android:text="I agree to the Terms of Service"
+        android:textColor="#CCCCCC"
+        android:textSize="16sp"
+        android:fontFamily="@font/myfont"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true" />
+
+    <!-- Create wallet button -->
+    <Button
+        android:id="@+id/createWalletButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create a new wallet"
+        android:enabled="false"
+        android:fontFamily="@font/myfont"
+        android:layout_below="@id/checkbox"
+        android:layout_marginTop="16dp"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/rounded_button"
+        android:layout_centerHorizontal="true" />
+
+    <!-- Already have wallet button -->
+    <Button
+        android:id="@+id/alreadyHaveWallet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="I already have a wallet?"
+        android:fontFamily="@font/myfont"
+        android:textSize="14sp"
+        android:textColor="#AAAAAA"
+        android:layout_below="@id/createWalletButton"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_button_secondary"
+        android:layout_centerHorizontal="true"
+        android:enabled="false" />
+
+    <!-- Optional hidden content for future use -->
+    <TextView
+        android:id="@+id/aboutContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="About Phantom App: Your secure wallet for crypto and NFTs."
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:fontFamily="@font/myfont" />
+
+    <TextView
+        android:id="@+id/roadmapContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Roadmap: Q3 2025 - Multi-chain, Q4 2025 - Fiat on-ramp."
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:fontFamily="@font/myfont" />
+
+</RelativeLayout>

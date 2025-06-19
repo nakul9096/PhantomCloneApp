@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Import Options"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:fontFamily="@font/myfont"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Import an existing wallet with your email seed phrase, private key or hardware wallet"
+        android:textColor="#CCCCCC"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/myfont" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/importseedphrasebtn"
+        android:fontFamily="@font/myfont"
+        android:textSize="15dp"
+        android:background="@drawable/rounded_button_secondary"
+        android:text="Import seed phrase"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:textSize="15dp"
+        android:id="@+id/btnimportprivatekey"
+        android:fontFamily="@font/myfont"
+        android:background="@drawable/rounded_button_secondary"
+        android:text="Import private key"
+        android:textColor="#FFFFFF" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnconnecthardwarewallets"
+        android:textSize="15dp"
+        android:fontFamily="@font/myfont"
+        android:background="@drawable/rounded_button_secondary"
+        android:text="Connect Hardware Wallet"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>
