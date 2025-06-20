@@ -21,3 +21,9 @@
     4.  **Import Private Key Page:** Implemented ImportPrivateKeyPage (Import Option 2).
     5.  **Connect Hardware Wallet Page:** Implemented ConnectHardwareWalletPage (Import Option 3).
     6.  **Back Buttons:** Added back buttons (ImageViews) with hit-back logic.
+ 
+* **DATE:** June 20, 2025 (Friday)
+    1.  **Clipboard On Click Action Added**
+    2.  **Dialog added (RecoveryPhrase Page)**
+    3.  **CreateUsername Page Added**
+    4.  **Device auth Action Added (ProtectWalletPage) - use Biometric Authentication**
