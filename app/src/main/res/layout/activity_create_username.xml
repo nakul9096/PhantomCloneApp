@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#121212"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:layout_marginTop="24dp"
+        android:paddingBottom="100dp"
+        android:paddingTop="24dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="32dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="Back"
+                    android:id="@+id/backIV"
+                    android:src="@android:drawable/ic_menu_revert"
+                    android:layout_marginEnd="16dp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FFFFFF"
+                    android:background="#FFFFFF"
+                    android:layout_marginEnd="4dp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FFFFFF"
+                    android:background="#FFFFFF"
+                    android:layout_marginEnd="4dp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FFFFFF"
+                    android:background="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Next"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:layout_marginStart="16dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:text="Create Username"
+                android:textSize="24sp"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="Personalize your account with a unique name.\nUsernames can be changed later on."
+                android:textSize="14sp"
+                android:textColor="#CCCCCC"
+                android:layout_marginBottom="32dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/rounded_button_secondary"
+                android:orientation="horizontal"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:text="\@"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/usernameInput"
+                    android:hint="ValuedPuma3021"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="#888888"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:paddingStart="8dp" />
+
+                <ImageView
+                    android:src="@drawable/ic_cross"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:contentDescription="Clear" />
+            </LinearLayout>
+
+            <TextView
+                android:text="✔ Username available"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="5dp"
+                android:textColor="#00C853"
+                android:textSize="14sp"
+                android:layout_marginBottom="48dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/continueButton"
+        android:text="Continue"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="48dp"
+        android:backgroundTint="#B39DDB"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:background="@drawable/rounded_button" />
+</FrameLayout>

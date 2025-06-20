@@ -13,6 +13,9 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".CreateUsername"
+            android:exported="false" />
+        <activity
             android:name=".ConnectHardwareWallet"
             android:exported="false" />
         <activity

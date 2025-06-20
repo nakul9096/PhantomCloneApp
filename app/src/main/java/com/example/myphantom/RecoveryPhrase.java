@@ -1,5 +1,6 @@
 package com.example.myphantom;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -9,15 +10,19 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.content.ClipboardManager;
+import android.content.ClipData;
 
-import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class RecoveryPhrase extends AppCompatActivity {
-    String[] words = {"amateur", "slice", "margin", "rose", "bicycle", "bacon", "reveal", "rally", "visa", "enroll", "elegant", "foam"};
+
+    String[] words = {
+            "amateur", "slice", "margin", "rose",
+            "bicycle", "bacon", "reveal", "rally",
+            "visa", "enroll", "elegant", "foam"
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +35,7 @@ public class RecoveryPhrase extends AppCompatActivity {
         ViewUtils.addPressEffect(btnSaved);
         GridLayout phraseGrid = findViewById(R.id.phraseGrid);
         for (int i = 0; i < words.length; i++) {
+            final String word = words[i];
             LinearLayout chip = new LinearLayout(this);
             chip.setOrientation(LinearLayout.HORIZONTAL);
             chip.setBackgroundResource(R.drawable.recovery_chip);
@@ -45,7 +51,7 @@ public class RecoveryPhrase extends AppCompatActivity {
             divider.setLayoutParams(dividerParams);
             divider.setBackgroundColor(Color.WHITE);
             TextView wordView = new TextView(this);
-            wordView.setText(words[i]);
+            wordView.setText(word);
             wordView.setTextColor(Color.WHITE);
             wordView.setTextSize(16f);
             chip.addView(numberView);
@@ -56,10 +62,38 @@ public class RecoveryPhrase extends AppCompatActivity {
             params.columnSpec = GridLayout.spec(GridLayout.UNDEFINED, 1f);
             params.setMargins(12, 12, 12, 12);
             chip.setLayoutParams(params);
+            chip.setOnClickListener(v -> {
+                ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("Word", word);
+                clipboard.setPrimaryClip(clip);
+                Toast.makeText(this, "Copied: " + word, Toast.LENGTH_SHORT).show();
+            });
+
             phraseGrid.addView(chip);
         }
+        copy.setOnClickListener(v -> {
+            StringBuilder fullPhrase = new StringBuilder();
+            for (String word : words) {
+                fullPhrase.append(word).append(" ");
+            }
+            ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+            ClipData clip = ClipData.newPlainText("Recovery Phrase", fullPhrase.toString().trim());
+            clipboard.setPrimaryClip(clip);
+            Toast.makeText(this, "Full phrase copied to clipboard!", Toast.LENGTH_SHORT).show();
+        });
         btnSaved.setOnClickListener(v -> {
-            Toast.makeText(this, "Phrase saved!", Toast.LENGTH_SHORT).show();
+            new AlertDialog.Builder(this)
+                    .setTitle("Written the recovery phase down?")
+                    .setMessage("Without the recovery phrase you will not be able to access your key or any assets associated with it.")
+                    .setCancelable(true)
+                    .setPositiveButton("Yes", (dialog, which) -> {
+                        Intent intent = new Intent(RecoveryPhrase.this, CreateUsername.class);
+                        startActivity(intent);
+                    })
+                    .setNegativeButton("Cancel", (dialog, which) -> {
+                        dialog.dismiss();
+                    })
+                    .show();
         });
     }
 }
