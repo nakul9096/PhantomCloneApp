@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:lottie="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/jumpingAnimation"
+        android:layout_width="1000dp"
+        android:layout_height="1000dp"
+        lottie:lottie_rawRes="@raw/loading"
+        lottie:lottie_autoPlay="true"
+        lottie:lottie_loop="true" />
+
+    <TextView
+        android:id="@+id/greetingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hi!"
+        android:textSize="40sp"
+        android:fontFamily="@font/myfont"
+        android:textStyle="bold"
+        android:textColor="#FFF176"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="\@BriefLava527"
+        android:textSize="24sp"
+        android:textColor="#FFFFFF"
+        android:layout_below="@id/greetingText"
+        android:fontFamily="@font/myfont"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/confirmationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You're all ready!"
+        android:textSize="22sp"
+        android:fontFamily="@font/myfont"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_below="@id/username"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="220dp" />
+
+    <TextView
+        android:id="@+id/subText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You can now fully enjoy your wallet."
+        android:textSize="16sp"
+        android:fontFamily="@font/myfont"
+        android:textColor="#AAAAAA"
+        android:layout_below="@id/confirmationText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4dp" />
+
+    <Button
+        android:id="@+id/getStartedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="48dp"
+        android:fontFamily="@font/myfont"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="48dp"
+        android:text="Get Started"
+        android:backgroundTint="#B39DDB"
+        android:textColor="#000000"
+        android:padding="12dp"
+        android:textSize="18sp"
+        android:background="@drawable/rounded_button" />
+</RelativeLayout>

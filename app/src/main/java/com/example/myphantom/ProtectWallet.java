@@ -12,7 +12,6 @@ import androidx.biometric.BiometricManager;
 import androidx.biometric.BiometricPrompt;
 import androidx.core.content.ContextCompat;
 import java.util.concurrent.Executor;
-import java.util.concurrent.Executor;
 public class ProtectWallet extends AppCompatActivity {
     private Switch deviceAuthSwitch;
     private BiometricPrompt biometricPrompt;
