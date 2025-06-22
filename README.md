@@ -27,3 +27,9 @@
     2.  **Dialog added (RecoveryPhrase Page)**
     3.  **CreateUsername Page Added**
     4.  **Device auth Action Added (ProtectWalletPage) - use Biometric Authentication**
+
+* **Date:** June 21, 2025 (Saturday)
+The **Get Started Page** UI was finalized. This includes a prominent **Lottie animation**, centrally aligned welcoming text like "Hi!" and the user's username, and a "You're all ready!" message with a "Get Started" button at the bottom.
+
+* **Date:** June 22, 2025 (Sunday)
+Sunday's focus was on the Dashboard Activity UI. This screen now features a header with user account information (profile image, username, account name), along with scan and search icons. A prominent Welcome Card is included, showcasing a Lottie animation and buttons for "Buy SOL with cash" and "Transfer crypto." Below this, a set of four action buttons (Receive, Send, Swap, Buy) are visually distinct. Finally, the dashboard lists cryptocurrency balances for Bitcoin, Ethereum, and Polygon, each presented with an icon, name, and current balance.
