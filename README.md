@@ -33,3 +33,7 @@ The **Get Started Page** UI was finalized. This includes a prominent **Lottie an
 
 * **Date:** June 22, 2025 (Sunday)
 Sunday's focus was on the Dashboard Activity UI. This screen now features a header with user account information (profile image, username, account name), along with scan and search icons. A prominent Welcome Card is included, showcasing a Lottie animation and buttons for "Buy SOL with cash" and "Transfer crypto." Below this, a set of four action buttons (Receive, Send, Swap, Buy) are visually distinct. Finally, the dashboard lists cryptocurrency balances for Bitcoin, Ethereum, and Polygon, each presented with an icon, name, and current balance.
+
+* **Date:** June 23, 2025 (Monday) & * **Date:** June 24, 2025 (Tuesday)
+- Added press feedback animation to all action buttons (Receive, Send, Swap, Buy) and other buttons for improved interactivity.
+- Developed and integrated the ReceiveActivity, SendActivity & ProfileViewActivity.
