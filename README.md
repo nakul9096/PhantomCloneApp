@@ -37,3 +37,11 @@ Sunday's focus was on the Dashboard Activity UI. This screen now features a head
 * **Date:** June 23, 2025 (Monday) & * **Date:** June 24, 2025 (Tuesday)
 Added press feedback animation to all action buttons (Receive, Send, Swap, Buy) and other buttons for improved interactivity.
 Developed and integrated the ReceiveActivity, SendActivity & ProfileViewActivity.
+
+* **Date:** June 25, 2025 (Wednesday)
+1. Updated Dashboard Activity
+2. Added constraints in EditProfile Activity to fitWindow and to eliminate the overlap to status bar and phone navigation
+3. Updated Profile Activity
+4. Created ScanQr Activity to open camera
+5. Created Search Activity
+And done minor fixes.
