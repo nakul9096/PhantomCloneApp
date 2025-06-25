@@ -4,18 +4,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#121212">
+    android:background="#121212"
+    android:fitsSystemWindows="true" >
 
     <ImageView
-        android:id="@+id/backButton"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:src="@android:drawable/ic_menu_close_clear_cancel"
-        android:contentDescription="Back"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="24dp"
-        android:layout_marginStart="16dp" />
+    android:id="@+id/backButton"
+    android:layout_width="24dp"
+    android:layout_height="24dp"
+    android:src="@android:drawable/ic_menu_close_clear_cancel"
+    android:contentDescription="Back"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:layout_marginTop="24dp"
+    android:layout_marginStart="16dp" />
 
     <TextView
         android:id="@+id/titleText"
@@ -25,9 +26,9 @@
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@id/backButton"
         app:layout_constraintStart_toEndOf="@id/backButton"
-        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toBottomOf="@id/backButton"
         android:layout_marginStart="12dp" />
 
     <ImageView
@@ -36,9 +37,9 @@
         android:layout_height="24dp"
         android:src="@drawable/ic_settings"
         android:contentDescription="Settings"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@id/backButton"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toBottomOf="@id/backButton"
         android:layout_marginEnd="16dp" />
 
     <TextView
@@ -48,7 +49,7 @@
         android:text="\@LushGlow3227"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/titleText"
+        app:layout_constraintTop_toBottomOf="@id/backButton"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="24dp"
         android:layout_marginStart="16dp" />
@@ -87,9 +88,10 @@
 
         <ImageView
             android:id="@+id/editIcon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginEnd="16dp"
+            android:background="@drawable/rounded_button_secondary"
             android:src="@android:drawable/ic_menu_edit"
             android:contentDescription="Edit" />
     </LinearLayout>
