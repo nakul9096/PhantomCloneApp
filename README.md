@@ -45,3 +45,12 @@ Developed and integrated the ReceiveActivity, SendActivity & ProfileViewActivity
 4. Created ScanQr Activity to open camera
 5. Created Search Activity
 And done minor fixes.
+
+* **Date:** June 26, 2025 (Thursday)
+1. Add new sections
+   Change the layout
+   Improve data display
+   Fix any bugs related to the dashboard
+   Integrate new features into the dashboard
+2. Enhanced Send Activity
+3. Enhanced Receive Activity
