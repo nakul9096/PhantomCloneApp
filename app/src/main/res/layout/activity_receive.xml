@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
     android:layout_height="match_parent"
     android:background="#121212">
 
@@ -12,18 +13,17 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:layout_marginTop="35dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:paddingTop="16dp"  android:paddingBottom="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
             android:id="@+id/backIcon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:layout_width="28dp" android:layout_height="28dp"
+            android:src="@drawable/ic_back"  app:tint="#FFFFFF"
             android:contentDescription="Back" />
 
         <TextView
@@ -31,8 +31,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_marginStart="12dp"
-            android:text="Receive"
+            android:layout_marginStart="16dp" android:text="Receive"
             android:textColor="#FFFFFF"
             android:fontFamily="@font/myfont"
             android:textSize="24sp"
@@ -40,9 +39,8 @@
 
         <ImageView
             android:id="@+id/searchIcon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@android:drawable/ic_menu_search"
+            android:layout_width="28dp" android:layout_height="28dp"
+            android:src="@drawable/ic_search"  app:tint="#FFFFFF"
             android:contentDescription="Search" />
     </LinearLayout>
 
@@ -50,10 +48,8 @@
         android:id="@+id/scrollContainer"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="24dp"
-        android:padding="16dp"
-        app:layout_constraintTop_toBottomOf="@id/topBar"
+        android:paddingTop="0dp" android:paddingStart="16dp" android:paddingEnd="16dp"
+        android:paddingBottom="24dp" app:layout_constraintTop_toBottomOf="@id/topBar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -64,20 +60,22 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Example item (repeat for each coin dynamically) -->
             <LinearLayout
                 android:layout_width="match_parent"
+                android:id="@+id/solanacard"
+                android:backgroundTint="#2B2B2B"
                 android:layout_height="70dp"
                 android:layout_marginBottom="12dp"
+                android:background="@drawable/rounded_card_secondary"
                 android:orientation="horizontal"
                 android:padding="12dp"
                 android:gravity="center_vertical"
-                android:background="@drawable/rounded_button_secondary">
+                android:elevation="2dp">
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_solana" />
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_solana" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -97,32 +95,33 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="0x26b9...9f8A"
-                        android:textColor="#CCCCCC"
+                        android:text="2GTE...2BYF" android:textColor="#CCCCCC"
                         android:textSize="14sp" />
                 </LinearLayout>
 
                 <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="40dp" android:layout_height="40dp"
                     android:layout_marginEnd="12dp"
+                    android:id="@+id/solanaqr"
                     android:src="@drawable/ic_qr_code"
-                    android:backgroundTint="#381C1C" />
-
-                <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:padding="8dp" android:background="@drawable/square_rounded_dark_bg" /> <ImageView
+                    android:layout_width="40dp" android:layout_height="40dp"
                     android:src="@drawable/ic_copy"
-                    android:backgroundTint="#1E1E1E" />
-            </LinearLayout>
+                    android:id="@+id/solanacopy"
+                    app:tint="#FFFFFF"
+                    android:padding="8dp" android:background="@drawable/square_rounded_dark_bg" /> </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
+                android:id="@+id/ethereumcard"
+                android:backgroundTint="#2B2B2B"
+                android:background="@drawable/rounded_card_secondary"
                 android:layout_marginBottom="12dp"
                 android:orientation="horizontal"
                 android:padding="12dp"
                 android:gravity="center_vertical"
-                android:background="@drawable/rounded_button_secondary">
+                android:elevation="2dp">
 
                 <ImageView
                     android:layout_width="40dp"
@@ -153,26 +152,35 @@
                 </LinearLayout>
 
                 <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_marginEnd="12dp"
                     android:src="@drawable/ic_qr_code"
-                    android:backgroundTint="#1E1E1E" />
+                    android:id="@+id/ethereumqr"
+                    android:padding="8dp"
+                    android:background="@drawable/square_rounded_dark_bg" />
 
                 <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="40dp"
+                    app:tint="#FFFFFF"
+                    android:layout_height="40dp"
+                    android:id="@+id/ethereumcopy"
                     android:src="@drawable/ic_copy"
-                    android:backgroundTint="#1E1E1E" />
+                    android:padding="8dp"
+                    android:background="@drawable/square_rounded_dark_bg" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
+                android:id="@+id/basecard"
                 android:layout_marginBottom="12dp"
+                android:backgroundTint="#2B2B2B"
                 android:orientation="horizontal"
+                android:background="@drawable/rounded_card_secondary"
                 android:padding="12dp"
                 android:gravity="center_vertical"
-                android:background="@drawable/rounded_button_secondary">
+                android:elevation="2dp">
 
                 <ImageView
                     android:layout_width="40dp"
@@ -189,8 +197,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Ethereum"
-                        android:textColor="#FFFFFF"
+                        android:text="Base" android:textColor="#FFFFFF"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
@@ -203,26 +210,35 @@
                 </LinearLayout>
 
                 <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_marginEnd="12dp"
                     android:src="@drawable/ic_qr_code"
-                    android:backgroundTint="#1E1E1E" />
+                    android:padding="8dp"
+                    android:id="@+id/baseqr"
+                    android:background="@drawable/square_rounded_dark_bg" />
 
                 <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/basecopy"
                     android:src="@drawable/ic_copy"
-                    android:backgroundTint="#1E1E1E" />
+                    app:tint="#FFFFFF"
+                    android:padding="8dp"
+                    android:background="@drawable/square_rounded_dark_bg" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_marginBottom="12dp"
                 android:orientation="horizontal"
+                android:id="@+id/suicard"
+                android:backgroundTint="#2B2B2B"
                 android:padding="12dp"
+                android:background="@drawable/rounded_card_secondary"
                 android:gravity="center_vertical"
-                android:background="@drawable/rounded_button_secondary">
+                android:elevation="2dp">
 
                 <ImageView
                     android:layout_width="40dp"
@@ -247,32 +263,40 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="0x26b9...9f8A"
-                        android:textColor="#CCCCCC"
+                        android:text="0x4827...c2b3" android:textColor="#CCCCCC"
                         android:textSize="14sp" />
                 </LinearLayout>
 
                 <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_marginEnd="12dp"
                     android:src="@drawable/ic_qr_code"
-                    android:backgroundTint="#1E1E1E" />
+                    android:id="@+id/suiqr"
+                    android:padding="8dp"
+                    android:background="@drawable/square_rounded_dark_bg" />
 
                 <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:src="@drawable/ic_copy"
-                    android:backgroundTint="#1E1E1E" />
+                    android:id="@+id/suicopy"
+                    app:tint="#FFFFFF"
+                    android:padding="8dp"
+                    android:background="@drawable/square_rounded_dark_bg" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_marginBottom="12dp"
                 android:orientation="horizontal"
                 android:padding="12dp"
+                android:id="@+id/polygoncard"
+                android:backgroundTint="#2B2B2B"
+                android:background="@drawable/rounded_card_secondary"
                 android:gravity="center_vertical"
-                android:background="@drawable/rounded_button_secondary">
+                android:elevation="2dp">
 
                 <ImageView
                     android:layout_width="40dp"
@@ -303,26 +327,35 @@
                 </LinearLayout>
 
                 <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_marginEnd="12dp"
+                    android:id="@+id/polygonqr"
                     android:src="@drawable/ic_qr_code"
-                    android:backgroundTint="#1E1E1E" />
+                    android:padding="8dp"
+                    android:background="@drawable/square_rounded_dark_bg" />
 
                 <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:tint="#FFFFFF"
                     android:src="@drawable/ic_copy"
-                    android:backgroundTint="#1E1E1E" />
+                    android:padding="8dp"
+                    android:id="@+id/polygoncopy"
+                    android:background="@drawable/square_rounded_dark_bg" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_marginBottom="12dp"
                 android:orientation="horizontal"
+                android:backgroundTint="#2B2B2B"
+                android:id="@+id/bitcoincard"
+                android:background="@drawable/rounded_card_secondary"
                 android:padding="12dp"
                 android:gravity="center_vertical"
-                android:background="@drawable/rounded_button_secondary">
+                android:elevation="2dp">
 
                 <ImageView
                     android:layout_width="40dp"
@@ -347,23 +380,27 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="0x26b9...9f8A"
-                        android:textColor="#CCCCCC"
+                        android:text="bc1q...uygr" android:textColor="#CCCCCC"
                         android:textSize="14sp" />
                 </LinearLayout>
 
                 <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_marginEnd="12dp"
                     android:src="@drawable/ic_qr_code"
-                    android:backgroundTint="#1E1E1E" />
+                    android:padding="8dp"
+                    android:id="@+id/bitcoinqr"
+                    android:background="@drawable/square_rounded_dark_bg" />
 
                 <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:src="@drawable/ic_copy"
-                    android:backgroundTint="#1E1E1E" />
+                    android:id="@+id/bitcoincopy"
+                    app:tint="#FFFFFF"
+                    android:padding="8dp"
+                    android:background="@drawable/square_rounded_dark_bg" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

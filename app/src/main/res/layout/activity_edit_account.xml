@@ -86,6 +86,7 @@
             android:orientation="horizontal"
             android:id="@+id/accName"
             android:background="@drawable/rounded_button_secondary"
+            android:backgroundTint="#2B2B2B"
             android:gravity="center_vertical"
             android:paddingHorizontal="16dp">
 
@@ -120,6 +121,7 @@
             android:orientation="horizontal"
             android:id="@+id/accAdrress"
             android:background="@drawable/rounded_button_secondary"
+            android:backgroundTint="#2B2B2B"
             android:gravity="center_vertical"
             android:paddingHorizontal="16dp">
 
@@ -146,6 +148,7 @@
             android:id="@+id/notification"
             android:orientation="horizontal"
             android:background="@drawable/rounded_button_secondary"
+            android:backgroundTint="#2B2B2B"
             android:gravity="center_vertical"
             android:paddingHorizontal="16dp">
 
@@ -171,6 +174,7 @@
             android:layout_height="60dp"
             android:orientation="horizontal"
             android:id="@+id/showRecoveryPhrase"
+            android:backgroundTint="#2B2B2B"
             android:background="@drawable/rounded_button_secondary"
             android:gravity="center_vertical"
             android:paddingHorizontal="16dp">
@@ -190,13 +194,16 @@
                 app:tint="#FFFFFF" />
         </LinearLayout>
 
-        <View android:layout_width="match_parent" android:layout_height="12dp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="12dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:id="@+id/showPrivateKey"
             android:layout_height="60dp"
             android:orientation="horizontal"
+            android:backgroundTint="#2B2B2B"
             android:background="@drawable/rounded_button_secondary"
             android:gravity="center_vertical"
             android:paddingHorizontal="16dp">

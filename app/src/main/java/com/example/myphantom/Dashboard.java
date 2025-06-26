@@ -5,10 +5,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-
 import androidx.appcompat.app.AppCompatActivity;
 public class Dashboard extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +52,6 @@ public class Dashboard extends AppCompatActivity {
         ViewUtils.addPressEffect(sendbtn);
         ViewUtils.addPressEffect(buybtn);
         ViewUtils.addPressEffect(myprofilebtn);
-
         sendbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

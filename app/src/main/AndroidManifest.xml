@@ -19,6 +19,9 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".GenerateQR"
+            android:exported="false" />
+        <activity
             android:name=".ScanQr"
             android:exported="false" />
         <activity

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:fitsSystemWindows="true">
+    <LinearLayout
+    android:id="@+id/topBar"
+    android:layout_width="0dp"
+    android:layout_height="?attr/actionBarSize" android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent">
+
+    <ImageView
+        android:id="@+id/backIcon"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:src="@drawable/ic_back" app:tint="#FFFFFF"
+        android:contentDescription="Back" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="16dp"
+        android:text="Your Solana Address"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/myfont"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingStart="24dp" android:paddingEnd="24dp"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/qrCodeCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
+            app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="16dp"      app:cardElevation="4dp">         <ImageView
+            android:id="@+id/qrCodeImageView"
+            android:layout_width="260dp"  android:layout_height="260dp"
+            android:padding="20dp"        android:src="@drawable/placeholder_qr_code" android:scaleType="fitCenter"
+            android:contentDescription="Solana QR Code" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/mainTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Solana Address"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/myfont"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Use this address to receive tokens and collectibles on Solana."
+            android:textColor="#AAAAAA"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:fontFamily="@font/myfont"
+            android:layout_marginBottom="32dp" />
+
+        <LinearLayout
+            android:id="@+id/addressDisplayLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/rounded_button_secondary" android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingVertical="16dp"
+            android:layout_marginBottom="10dp"
+            android:elevation="2dp">
+            <TextView
+            android:id="@+id/solanaAddressTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="2GTEQYDHXJWP....HDHJWDH2BYF" android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:fontFamily="@font/myfont"
+            android:singleLine="true"
+            android:ellipsize="middle" />
+
+            <ImageView
+                android:id="@+id/copyIcon"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="12dp"
+                android:src="@drawable/ic_copy" app:tint="#FFFFFF"
+                android:contentDescription="Copy Address" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/shareButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Share"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:fontFamily="@font/myfont"
+            android:backgroundTint="#B39DDB" android:paddingVertical="14dp"
+            android:background="@drawable/rounded_button" android:layout_marginBottom="24dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
