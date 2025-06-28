@@ -54,3 +54,10 @@ And done minor fixes.
    Integrate new features into the dashboard
 2. Enhanced Send Activity
 3. Enhanced Receive Activity
+
+* **Date:** June 27, 2025 (Friday) & * **Date:** June 28, 2025 (Saturday)
+1. Created Buy Activity
+2. Created BuyWithSol Activity
+3. Created Setting Activity
+4. Created ViewProfile Activity
+5. Fixes some UI glitches.
