@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:statusBarColor">#121212</item>
+        <item name="android:navigationBarColor">#121212</item>
+    </style>
+
+    <style name="NumericKeypadButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:fontFamily">@font/myfont</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+    </style>
+    <style name="SettingsListItemIcon">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+    </style>
+
+    <style name="SettingsListItemText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/myfont</item>
+        <item name="android:layout_marginStart">16dp</item>
+    </style>
+
+    <style name="SettingsListItemTrailingText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#AAAAAA</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/myfont</item>
+        <item name="android:layout_marginEnd">8dp</item>
+    </style>
+
+    <style name="SettingsListItemArrow">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:src">@drawable/ic_arrow_right</item> <item name="android:tint">#AAAAAA</item>
+    </style>
+
+    <style name="SettingsListItemExternalLink" parent="SettingsListItemArrow">
+        <item name="android:src">@drawable/ic_external_link</item> </style>
+
+    <style name="SettingsListItemShare" parent="SettingsListItemArrow">
+        <item name="android:src">@drawable/ic_share</item> </style>
+
+    <style name="SettingsListDivider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">#333333</item> <item name="android:layout_marginStart">16dp</item> <item name="android:layout_marginEnd">16dp</item> </style>
+
+    <drawable name="rounded_search_bar">
+        <shape android:shape="rectangle">
+            <corners android:radius="12dp"/>
+            <solid android:color="#2B2B2B"/> </shape>
+    </drawable>
+</resources>

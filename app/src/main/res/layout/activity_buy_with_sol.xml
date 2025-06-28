@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F0F0F"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:id="@+id/toolbar_buy_sol"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:background="#1C1C1E"
+        android:elevation="4dp">
+
+        <ImageView
+            android:id="@+id/back_button_buy_sol"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_back"
+            app:tint="#FFFFFF"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_solana" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buy SOL"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/myfont"
+            android:layout_marginStart="8dp"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/currency_dropdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="USD"
+            android:textColor="#FF9800"
+            android:textSize="16sp"
+            android:fontFamily="@font/myfont"
+            android:drawableEnd="@drawable/ic_dropdown"
+            android:drawablePadding="6dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar_buy_sol"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/display_amount_usd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$0"
+                android:textColor="#FFFFFF"
+                android:textSize="64sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/myfont"
+                android:layout_marginTop="24dp" />
+
+            <TextView
+                android:id="@+id/display_amount_sol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 SOL ↑↓"
+                android:textColor="#BBBBBB"
+                android:textSize="16sp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/myfont" />
+
+            <LinearLayout
+                android:id="@+id/payment_method_dropdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/rounded_card_dark"
+                android:backgroundTint="#2A2A2A"
+                android:elevation="2dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_bank"
+                    app:tint="#FF9800" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="UPI via Onmeta"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/myfont" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_dropdown"
+                    android:layout_marginStart="10dp"
+                    app:tint="#CCCCCC" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="32dp"
+                android:weightSum="3">
+
+                <Button
+                    android:id="@+id/btn_amount_25"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="$25"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/myfont"
+                    android:backgroundTint="#FF9800"
+                    android:background="@drawable/rounded_button_gradient"
+                    android:paddingVertical="12dp"
+                    android:elevation="3dp"/>
+
+                <Button
+                    android:id="@+id/btn_amount_50"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="$50"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/myfont"
+                    android:backgroundTint="#FF9800"
+                    android:background="@drawable/rounded_button_gradient"
+                    android:paddingVertical="12dp"
+                    android:layout_marginHorizontal="8dp"
+                    android:elevation="3dp"/>
+
+                <Button
+                    android:id="@+id/btn_amount_100"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="$100"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/myfont"
+                    android:backgroundTint="#FF9800"
+                    android:background="@drawable/rounded_button_gradient"
+                    android:paddingVertical="12dp"
+                    android:elevation="3dp"/>
+            </LinearLayout>
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:columnCount="4"
+                android:alignmentMode="alignMargins"
+                android:useDefaultMargins="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="36dp"
+                android:rowOrderPreserved="false">
+
+            <TextView
+                    android:id="@+id/key_1"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/rounded_key_dark"
+                    android:fontFamily="@font/myfont"/>
+
+                <TextView
+                    android:id="@+id/key_2"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:gravity="center"
+                    android:text="2"
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/rounded_key_dark"
+                    android:fontFamily="@font/myfont"/>
+
+                <TextView
+                    android:id="@+id/key_3"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:gravity="center"
+                    android:text="3"
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/rounded_key_dark"
+                    android:fontFamily="@font/myfont"/>
+
+                <TextView
+                    android:id="@+id/key_4"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:gravity="center"
+                    android:text="4"
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/rounded_key_dark"
+                    android:fontFamily="@font/myfont"/>
+
+                <TextView
+                    android:id="@+id/key_5"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:gravity="center"
+                    android:text="5"
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/rounded_key_dark"
+                    android:fontFamily="@font/myfont"/>
+
+                <TextView
+                    android:id="@+id/key_6"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:gravity="center"
+                    android:text="6"
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/rounded_key_dark"
+                    android:fontFamily="@font/myfont"/>
+
+                <TextView
+                    android:id="@+id/key_7"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:gravity="center"
+                    android:text="7"
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/rounded_key_dark"
+                    android:fontFamily="@font/myfont"/>
+
+                <TextView
+                    android:id="@+id/key_8"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:gravity="center"
+                    android:text="8"
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/rounded_key_dark"
+                    android:fontFamily="@font/myfont"/>
+
+                <TextView
+                    android:id="@+id/key_9"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:gravity="center"
+                    android:text="9"
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/rounded_key_dark"
+                    android:fontFamily="@font/myfont"/>
+
+                <TextView
+                    android:id="@+id/key_dot"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:gravity="center"
+                    android:text="."
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/rounded_key_dark"
+                    android:fontFamily="@font/myfont"/>
+
+                <TextView
+                    android:id="@+id/key_0"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/rounded_key_dark"
+                    android:fontFamily="@font/myfont"/>
+
+                <ImageView
+                    android:id="@+id/key_backspace"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:padding="16dp"
+                    app:tint="#FF4444"
+                    android:background="@android:drawable/ic_menu_close_clear_cancel"
+                    android:scaleType="centerInside"
+                    android:clickable="true"
+                    android:focusable="true" />
+            </GridLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

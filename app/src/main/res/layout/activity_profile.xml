@@ -57,7 +57,7 @@
     <LinearLayout
         android:id="@+id/accountContainer"
         android:layout_width="0dp"
-        android:layout_height="70dp"
+        android:layout_height="80dp"
         android:backgroundTint="#9D8DFF"
         android:background="@drawable/rounded_bg"
         android:orientation="horizontal"

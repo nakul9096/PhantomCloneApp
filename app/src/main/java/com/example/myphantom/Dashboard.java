@@ -52,6 +52,13 @@ public class Dashboard extends AppCompatActivity {
         ViewUtils.addPressEffect(sendbtn);
         ViewUtils.addPressEffect(buybtn);
         ViewUtils.addPressEffect(myprofilebtn);
+        buybtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Dashboard.this, Buy.class);
+                startActivity(intent);
+            }
+        });
         sendbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,6 +70,13 @@ public class Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Dashboard.this, Receive.class);
+                startActivity(intent);
+            }
+        });
+        buysolwithcashbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Dashboard.this, BuyWithSol.class);
                 startActivity(intent);
             }
         });

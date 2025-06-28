@@ -6,11 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class Profile extends AppCompatActivity {
 
@@ -18,9 +14,26 @@ public class Profile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        ImageView settingsIcon = findViewById(R.id.settingsIcon);
         ImageView backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(v -> onBackPressed());
         ImageView editIcon = findViewById(R.id.editIcon);
+        Button viewProfileButton = findViewById(R.id.viewProfileButton);
+        ViewUtils.addPressEffect(viewProfileButton);
+        viewProfileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Profile.this, ViewProfile.class);
+                startActivity(intent);
+            }
+        });
+        settingsIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Profile.this, Setting.class);
+                startActivity(intent);
+            }
+        });
         Button addWalletButton = findViewById(R.id.addWalletButton);
         ViewUtils.addPressEffect(addWalletButton);
         addWalletButton.setOnClickListener(new View.OnClickListener() {
