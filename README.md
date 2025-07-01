@@ -61,3 +61,23 @@ And done minor fixes.
 3. Created Setting Activity
 4. Created ViewProfile Activity
 5. Fixes some UI glitches.
+
+* **Date:** June 30, 2025 (Monday) & * **Date:** July 01, 2025 (Tuesday)
+The following activities were enhanced or updated for improved performance, UI/UX, or added functionality:
+1) BuyActivity
+2) CreateUsernameActivity
+3) DashboardActivity
+4) EditAccountActivity
+5) GenerateQrActivity
+6) RecoveryPhraseActivity
+7) SendActivity
+8) ScanQrActivity
+9) ViewProfileActivity
+...and several other supporting activities.
+
+New screens and activities were introduced to extend wallet functionality:
+
+1) EditProfileActivity – Edit user profile details.
+2) NotificationActivity – Manage notification preferences.
+3) ShowPrivateKeyActivity – Displays disclaimer.
+4) ShowRecoveryPhraseActivity – Displays disclaimer.
