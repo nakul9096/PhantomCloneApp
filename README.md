@@ -63,6 +63,7 @@ And done minor fixes.
 5. Fixes some UI glitches.
 
 * **Date:** June 30, 2025 (Monday) & * **Date:** July 01, 2025 (Tuesday)
+
 The following activities were enhanced or updated for improved performance, UI/UX, or added functionality:
 1) BuyActivity
 2) CreateUsernameActivity
