@@ -52,8 +52,8 @@
             android:id="@+id/accountInitials"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="A1"
             android:gravity="center"
+            android:text="A1"
             android:textColor="#FFFFFF"
             android:textSize="36sp"
             android:textStyle="bold" />

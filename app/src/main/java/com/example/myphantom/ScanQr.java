@@ -9,33 +9,53 @@ import android.widget.Button;
 import android.widget.Toast;
 import android.Manifest;
 
-import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import com.journeyapps.barcodescanner.ScanContract;
+import com.journeyapps.barcodescanner.ScanOptions;
+import com.journeyapps.barcodescanner.CaptureActivity;
 
 public class ScanQr extends AppCompatActivity {
 
     private static final int CAMERA_PERMISSION_REQUEST_CODE = 100;
 
+    private final ActivityResultLauncher<String> requestPermissionLauncher =
+            registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
+                if (isGranted) {
+                    Toast.makeText(ScanQr.this, "Camera permission granted", Toast.LENGTH_SHORT).show();
+                    initiateQrScan();
+                } else {
+                    Toast.makeText(ScanQr.this, "Camera permission denied", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+    private final ActivityResultLauncher<ScanOptions> qrScanLauncher = registerForActivityResult(new ScanContract(), result -> {
+        if (result.getContents() == null) {
+            Toast.makeText(ScanQr.this, "Scan Cancelled", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(ScanQr.this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
+        }
+    });
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan_qr);
+
         Button grantCameraPermissions = findViewById(R.id.btn_grant_permissions);
         Button openSettings = findViewById(R.id.btn_open_settings);
+
         grantCameraPermissions.setOnClickListener(v -> {
             if (ContextCompat.checkSelfPermission(ScanQr.this, Manifest.permission.CAMERA)
                     == PackageManager.PERMISSION_GRANTED) {
-                openCamera();
+                initiateQrScan();
             } else {
-                ActivityCompat.requestPermissions(ScanQr.this,
-                        new String[]{Manifest.permission.CAMERA},
-                        CAMERA_PERMISSION_REQUEST_CODE);
+                requestPermissionLauncher.launch(Manifest.permission.CAMERA);
             }
         });
 
@@ -47,25 +67,12 @@ public class ScanQr extends AppCompatActivity {
         });
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == CAMERA_PERMISSION_REQUEST_CODE) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(this, "Camera permission granted", Toast.LENGTH_SHORT).show();
-                openCamera();
-            } else {
-                Toast.makeText(this, "Camera permission denied", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
-
-    private void openCamera() {
-        Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-        if (cameraIntent.resolveActivity(getPackageManager()) != null) {
-            startActivity(cameraIntent);
-        } else {
-            Toast.makeText(this, "No camera app found", Toast.LENGTH_SHORT).show();
-        }
+    private void initiateQrScan() {
+        ScanOptions options = new ScanOptions();
+        options.setPrompt("Scan a QR code");
+        options.setBeepEnabled(true);
+        options.setOrientationLocked(false);
+        options.setCaptureActivity(CaptureActivity.class);
+        qrScanLauncher.launch(options);
     }
 }

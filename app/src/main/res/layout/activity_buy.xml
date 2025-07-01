@@ -21,10 +21,10 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/ic_back"
-        app:tint="#FFFFFF"
-        android:clickable="true"
-        android:focusable="true"
-        android:background="?attr/selectableItemBackgroundBorderless"/>
+            app:tint="#FFFFFF"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
 
         <TextView
             android:layout_width="0dp"
@@ -125,7 +125,7 @@
                     android:layout_marginEnd="8dp"
                     android:clickable="true"
                     android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground"> <!-- Ripple feedback -->
+                    android:foreground="?attr/selectableItemBackground">
 
                     <ImageView
                         android:layout_width="48dp"
@@ -164,7 +164,7 @@
                     android:layout_marginStart="8dp"
                     android:clickable="true"
                     android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground"> <!-- Ripple feedback -->
+                    android:foreground="?attr/selectableItemBackground">
 
                     <ImageView
                         android:layout_width="48dp"
@@ -339,7 +339,6 @@
                             android:fontFamily="@font/myfont" />
                     </LinearLayout>
                 </LinearLayout>
-                <!-- Add more list items for other popular tokens as needed -->
 
             </LinearLayout>
         </LinearLayout>

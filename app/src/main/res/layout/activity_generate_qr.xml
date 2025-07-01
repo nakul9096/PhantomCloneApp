@@ -129,7 +129,7 @@
             android:textColor="#000000"
             android:textStyle="bold"
             android:fontFamily="@font/myfont"
-            android:backgroundTint="#B39DDB" android:paddingVertical="14dp"
+            android:backgroundTint="#9D8DFF" android:paddingVertical="14dp"
             android:background="@drawable/rounded_button" android:layout_marginBottom="24dp"/>
 
         <View

@@ -20,6 +20,17 @@ public class Receive extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receive);
+        ImageView searchIcon = findViewById(R.id.searchIcon);
+        ViewUtils.addPressEffect(searchIcon);
+        searchIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Receive.this, ScanQr.class);
+                startActivity(intent);
+            }
+        });
+        ImageView backIcon = findViewById(R.id.backIcon);
+        backIcon.setOnClickListener(v -> onBackPressed());
         LinearLayout solanacard = findViewById(R.id.solanacard);
         LinearLayout ethereumcard = findViewById(R.id.ethereumcard);
         LinearLayout basecard = findViewById(R.id.basecard);
