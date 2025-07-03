@@ -82,3 +82,16 @@ New screens and activities were introduced to extend wallet functionality:
 2) NotificationActivity – Manage notification preferences.
 3) ShowPrivateKeyActivity – Displays disclaimer.
 4) ShowRecoveryPhraseActivity – Displays disclaimer.
+
+* **Date:** June 02, 2025 (Wednesday) & **Date:** July 03, 2025 (Thursday)
+1) Updated ConnectHardwareWallet
+2) Created Activity (CreateAccount)
+3) Updated Dashboard with BottomNavigationBar
+4) Created 5 Fragments
+    a) HomeFragment i.e Initial Dashboard
+    b) FeedFragment
+    c) TrendingFragment
+    d) HistoryFragment
+    e) SearchFragment
+5) Created Activity (WatchAddress)
+6) And done many minor changes and bug fixes, etc
