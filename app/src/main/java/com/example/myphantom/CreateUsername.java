@@ -21,6 +21,7 @@ public class CreateUsername extends AppCompatActivity {
         ImageView backIV = findViewById(R.id.backIV);
         backIV.setOnClickListener(v -> onBackPressed());
         Button continueButton = findViewById(R.id.continueButton);
+        ViewUtils.addPressEffect(continueButton);
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

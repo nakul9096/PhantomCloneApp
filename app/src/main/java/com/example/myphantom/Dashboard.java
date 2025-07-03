@@ -1,98 +1,79 @@
 package com.example.myphantom;
-import android.content.Intent;
+
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.view.Window;
+import android.widget.FrameLayout;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class Dashboard extends AppCompatActivity {
+    private BottomNavigationView bottomNavigationView;
+    private FrameLayout navHostFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-        ImageView searchbtn = findViewById(R.id.searchbtn);
-        ImageView scanqr = findViewById(R.id.scanqr);
-        scanqr.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Dashboard.this, ScanQr.class);
-                startActivity(intent);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.setNavigationBarColor(Color.parseColor("#1C1C1C"));
+        }
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        navHostFragment = findViewById(R.id.nav_host_fragment);
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            Fragment selectedFragment = null;
+            String tag = "";
+
+            int itemId = item.getItemId();
+            if (itemId == R.id.nav_home) {
+                selectedFragment = new HomeFragment();
+                tag = "HOME";
+            } else if (itemId == R.id.nav_feed) {
+                selectedFragment = new FeedFragment();
+                tag = "FEED";
+            } else if (itemId == R.id.nav_trending) {
+                selectedFragment = new TrendingFragment();
+                tag = "TRENDING";
+            } else if (itemId == R.id.nav_history) {
+                selectedFragment = new HistoryFragment();
+                tag = "HISTORY";
+            } else if (itemId == R.id.nav_search) {
+                selectedFragment = new SearchFragment();
+                tag = "SEARCH";
             }
-        });
-        ViewUtils.addPressEffect(searchbtn);
-        searchbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Dashboard.this, Search.class);
-                startActivity(intent);
+            if (selectedFragment != null) {
+                loadFragment(selectedFragment, tag);
+                return true;
             }
+            return false;
         });
-        ImageView myprofilebtn = findViewById(R.id.myprofilebtn);
-        Button buysolwithcashbtn = findViewById(R.id.buysolwithcashbtn);
-        Button transfercryptobtn = findViewById(R.id.transfercryptobtn);
-        LinearLayout swapbtn = findViewById(R.id.swapbtn);
-        LinearLayout recievebtn = findViewById(R.id.receivebtn);
-        LinearLayout sendbtn = findViewById(R.id.sendbtn);
-        LinearLayout buybtn = findViewById(R.id.buybtn);
-        LinearLayout assestBitcoin = findViewById(R.id.assestBitcoin);
-        LinearLayout assestEthereum = findViewById(R.id.assestEthereum);
-        LinearLayout assestSolana = findViewById(R.id.assestSolana);
-        LinearLayout assestPolygon = findViewById(R.id.assestPolygon);
-        LinearLayout assestSui = findViewById(R.id.assestSui);
-        ViewUtils.addPressEffect(assestBitcoin);
-        ViewUtils.addPressEffect(assestEthereum);
-        ViewUtils.addPressEffect(assestSolana);
-        ViewUtils.addPressEffect(assestPolygon);
-        ViewUtils.addPressEffect(assestSui);
-        ViewUtils.addPressEffect(buysolwithcashbtn);
-        ViewUtils.addPressEffect(transfercryptobtn);
-        ViewUtils.addPressEffect(swapbtn);
-        ViewUtils.addPressEffect(recievebtn);
-        ViewUtils.addPressEffect(sendbtn);
-        ViewUtils.addPressEffect(buybtn);
-        ViewUtils.addPressEffect(myprofilebtn);
-        buybtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Dashboard.this, Buy.class);
-                startActivity(intent);
-            }
-        });
-        sendbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Dashboard.this, Send.class);
-                startActivity(intent);
-            }
-        });
-        transfercryptobtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Dashboard.this, Receive.class);
-                startActivity(intent);
-            }
-        });
-        buysolwithcashbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Dashboard.this, BuyWithSol.class);
-                startActivity(intent);
-            }
-        });
-        recievebtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Dashboard.this, Receive.class);
-                startActivity(intent);
-            }
-        });
-        myprofilebtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Dashboard.this, Profile.class);
-                startActivity(intent);
-            }
-        });
+        if (savedInstanceState == null) {
+            bottomNavigationView.setSelectedItemId(R.id.nav_home);
+        }
+    }
+
+    private void loadFragment(Fragment fragment, String tag) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        Fragment currentFragment = fragmentManager.findFragmentById(R.id.nav_host_fragment);
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        if (currentFragment != null && currentFragment.getClass().equals(fragment.getClass())) {
+            return;
+        }
+        fragmentTransaction.setCustomAnimations(
+                R.anim.slide_in_right,
+                R.anim.slide_out_left,
+                R.anim.slide_in_left,
+                R.anim.slide_out_right
+        );
+
+        fragmentTransaction.replace(R.id.nav_host_fragment, fragment, tag);
+        fragmentTransaction.commit();
     }
 }

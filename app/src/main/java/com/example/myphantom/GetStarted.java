@@ -18,6 +18,7 @@ public class GetStarted extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_started);
         Button getStartedButton = findViewById(R.id.getStartedButton);
+        ViewUtils.addPressEffect(getStartedButton);
         getStartedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

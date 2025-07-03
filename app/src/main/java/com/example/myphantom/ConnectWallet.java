@@ -1,5 +1,6 @@
 package com.example.myphantom;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -30,5 +31,40 @@ public class ConnectWallet extends AppCompatActivity {
         ViewUtils.addPressEffect(importRecoveryPhrase);
         ViewUtils.addPressEffect(connectHardwareWallet);
         ViewUtils.addPressEffect(watchAddress);
+        createAccountCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ConnectWallet.this, CreateAccount.class);
+                startActivity(intent);
+            }
+        });
+        connectHardwareWallet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ConnectWallet.this, ConnectHardwareWallet.class);
+                startActivity(intent);
+            }
+        });
+        importRecoveryPhrase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ConnectWallet.this, RecoveryPhraseTV.class);
+                startActivity(intent);
+            }
+        });
+        watchAddress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ConnectWallet.this, WatchAddress.class);
+                startActivity(intent);
+            }
+        });
+        importPrivateKey.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ConnectWallet.this, PrivateKey.class);
+                startActivity(intent);
+            }
+        });
     }
 }
