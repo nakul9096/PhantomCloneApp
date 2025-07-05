@@ -21,10 +21,8 @@ public class Dashboard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            Window window = getWindow();
-            window.setNavigationBarColor(Color.parseColor("#1C1C1C"));
-        }
+        Window window = getWindow();
+        window.setNavigationBarColor(Color.parseColor("#1C1C1C"));
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         navHostFragment = findViewById(R.id.nav_host_fragment);
         bottomNavigationView.setOnItemSelectedListener(item -> {

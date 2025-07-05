@@ -17,6 +17,11 @@
         <item name="android:focusable">true</item>
         <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
     </style>
+
+    <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
     <style name="SettingsListItemIcon">
         <item name="android:layout_width">24dp</item>
         <item name="android:layout_height">24dp</item>

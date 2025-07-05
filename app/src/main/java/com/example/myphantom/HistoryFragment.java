@@ -21,11 +21,7 @@ public class HistoryFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_history, container, false);
 
         Button refreshButton = view.findViewById(R.id.refreshButton);
-        refreshButton.setOnClickListener(v -> {
-            // Add your refresh logic here
-            // For example: fetchRecentActivity();
-        });
-
+        ViewUtils.addPressEffect(refreshButton);
         return view;
     }
 
