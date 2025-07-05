@@ -95,3 +95,8 @@ New screens and activities were introduced to extend wallet functionality:
     e) SearchFragment
 5) Created Activity (WatchAddress)
 6) And done many minor changes and bug fixes, etc
+
+* **Date:** June 04, 2025 (Friday) & **Date:** June 05, 2025 (Saturday)
+1) Updated FeedFragment Page
+2) Updated HistoryFragment Page
+3) Added Graphs etc
