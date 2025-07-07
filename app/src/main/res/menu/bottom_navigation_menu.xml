@@ -11,8 +11,8 @@
         android:title="Feed" />
     <item
         android:id="@+id/nav_trending"
-        android:icon="@drawable/ic_trending"
-        android:title="Trending" />
+        android:icon="@drawable/ic_swap"
+        android:title="Swap" />
     <item
         android:id="@+id/nav_history"
         android:icon="@drawable/ic_history"

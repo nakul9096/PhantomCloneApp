@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-
 import androidx.fragment.app.Fragment;
-
+import androidx.fragment.app.FragmentTransaction;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class HomeFragment extends Fragment {
 
     public HomeFragment() {}
@@ -19,8 +19,6 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-
-        // Initialize all views
         ImageView searchBtn = view.findViewById(R.id.searchbtn);
         ImageView scanQr = view.findViewById(R.id.scanqr);
         ImageView myProfileBtn = view.findViewById(R.id.myprofilebtn);
@@ -35,8 +33,6 @@ public class HomeFragment extends Fragment {
         LinearLayout assetSolana = view.findViewById(R.id.assestSolana);
         LinearLayout assetPolygon = view.findViewById(R.id.assestPolygon);
         LinearLayout assetSui = view.findViewById(R.id.assestSui);
-
-        // Set click listeners
         searchBtn.setOnClickListener(v -> startActivity(new Intent(getActivity(), Search.class)));
         scanQr.setOnClickListener(v -> startActivity(new Intent(getActivity(), ScanQr.class)));
         myProfileBtn.setOnClickListener(v -> startActivity(new Intent(getActivity(), Profile.class)));
@@ -46,10 +42,7 @@ public class HomeFragment extends Fragment {
         sendBtn.setOnClickListener(v -> startActivity(new Intent(getActivity(), Send.class)));
         buyBtn.setOnClickListener(v -> startActivity(new Intent(getActivity(), Buy.class)));
         swapBtn.setOnClickListener(v -> {
-            // Handle swap action
         });
-
-        // Set press effects
         ViewUtils.addPressEffect(searchBtn);
         ViewUtils.addPressEffect(scanQr);
         ViewUtils.addPressEffect(myProfileBtn);
@@ -64,7 +57,6 @@ public class HomeFragment extends Fragment {
         ViewUtils.addPressEffect(assetSolana);
         ViewUtils.addPressEffect(assetPolygon);
         ViewUtils.addPressEffect(assetSui);
-
         return view;
     }
 }
