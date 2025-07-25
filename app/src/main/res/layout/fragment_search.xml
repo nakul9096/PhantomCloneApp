@@ -36,9 +36,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:id="@+id/searchLayout"
                 android:layout_toEndOf="@id/account_initials"
                 android:layout_marginStart="12dp"
-                android:background="@drawable/rounded_button_secondary"
+                android:background="@drawable/rounded_button_options"
                 android:layout_marginEnd="30dp"
                 android:gravity="center_vertical"
                 android:paddingHorizontal="12dp">
@@ -53,6 +54,7 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_weight="1"
+                    android:background="@android:color/transparent"
                     android:layout_height="wrap_content"
                     android:text="Sites, tokens, URL"
                     android:textColor="#AAAAAA"
@@ -61,9 +63,10 @@
             </LinearLayout>
 
             <ImageView
+                android:id="@+id/addbtn"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@android:drawable/stat_notify_more"
+                android:src="@drawable/ic_add"
                 app:tint="#FFFFFF"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
@@ -76,58 +79,63 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:background="@drawable/rounded_button_options"
+            android:padding="15dp"
             android:gravity="center_vertical"
             android:layout_marginBottom="8dp">
 
             <Button
+                android:id="@+id/btn_filter_tokens"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:text="Tokens"
                 android:textColor="#FFFFFF"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 android:fontFamily="@font/myfont"
-                android:background="@drawable/rounded_button_gradient"
-                android:paddingVertical="8dp"
+                android:background="@drawable/rounded_button_gradient_selected" android:paddingVertical="8dp"
                 android:layout_marginEnd="8dp"/>
 
             <Button
+                android:id="@+id/btn_filter_lists"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:text="Lists"
                 android:textColor="#FFFFFF"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 android:fontFamily="@font/myfont"
-                android:background="@drawable/rounded_button_secondary"
+                android:background="@drawable/rounded_button_options"
                 android:paddingVertical="8dp"
                 android:layout_marginEnd="8dp"/>
 
             <Button
+                android:id="@+id/btn_filter_people"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:text="People"
                 android:textColor="#FFFFFF"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 android:fontFamily="@font/myfont"
-                android:background="@drawable/rounded_button_secondary"
+                android:background="@drawable/rounded_button_options"
                 android:paddingVertical="8dp"
                 android:layout_marginEnd="8dp"/>
 
             <Button
+                android:id="@+id/btn_filter_dapps"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:text="DApps"
                 android:textColor="#FFFFFF"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 android:fontFamily="@font/myfont"
-                android:background="@drawable/rounded_button_secondary"
+                android:background="@drawable/rounded_button_options"
                 android:paddingVertical="8dp"/>
         </LinearLayout>
     </LinearLayout>
@@ -139,14 +147,20 @@
         android:fillViewport="true">
 
         <LinearLayout
+            android:id="@+id/scrollable_content_container"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingHorizontal="16dp"
             android:paddingTop="16dp"
             android:paddingBottom="16dp">
 
-            <RelativeLayout
+            <LinearLayout
+                android:id="@+id/section_tokens"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible"> <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp">
@@ -171,263 +185,30 @@
                     android:background="?attr/selectableItemBackgroundBorderless"/>
             </RelativeLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/rounded_card_dark"
-                android:paddingVertical="8dp"
-                android:layout_marginBottom="24dp">
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:paddingVertical="12dp"
-                    android:paddingHorizontal="16dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:background="?attr/selectableItemBackground">
-                    <RelativeLayout
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginEnd="12dp">
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/ic_supergrok"
-                            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
-                            android:padding="8dp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="1"
-                            android:textColor="#FFFFFF"
-                            android:textSize="10sp"
-                            android:textStyle="bold"
-                            android:fontFamily="@font/myfont"
-                            android:paddingHorizontal="4dp"
-                            android:paddingVertical="2dp"
-                            android:layout_alignParentBottom="true"
-                            android:layout_alignParentEnd="true"
-                            android:layout_marginBottom="-4dp"
-                            android:layout_marginEnd="-4dp"/>
-                    </RelativeLayout>
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="SuperGrok"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp"
-                            android:fontFamily="@font/myfont"
-                            android:textStyle="bold"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="$1.1M MC"
-                            android:textColor="#AAAAAA"
-                            android:textSize="14sp"
-                            android:fontFamily="@font/myfont"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:gravity="end">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="$0.00106262"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp"
-                            android:fontFamily="@font/myfont"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="+7,955.30%"
-                            android:textColor="#7ED957"
-                            android:textSize="14sp"
-                            android:fontFamily="@font/myfont"/>
-                    </LinearLayout>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#333333"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:paddingVertical="12dp"
-                    android:paddingHorizontal="16dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:background="?attr/selectableItemBackground">
-                    <RelativeLayout
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginEnd="12dp">
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/ic_bitcoin"
-                            android:padding="8dp"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="2"
-                            android:textColor="#FFFFFF"
-                            android:textSize="10sp"
-                            android:textStyle="bold"
-                            android:fontFamily="@font/myfont"
-                            android:paddingHorizontal="4dp"
-                            android:paddingVertical="2dp"
-                            android:layout_alignParentBottom="true"
-                            android:layout_alignParentEnd="true"
-                            android:layout_marginBottom="-4dp"
-                            android:layout_marginEnd="-4dp"/>
-                    </RelativeLayout>
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="BARRON"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp"
-                            android:fontFamily="@font/myfont"
-                            android:textStyle="bold"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="$863K MC"
-                            android:textColor="#AAAAAA"
-                            android:textSize="14sp"
-                            android:fontFamily="@font/myfont"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:gravity="end">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="$0.00086332"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp"
-                            android:fontFamily="@font/myfont"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="+817.51%"
-                            android:textColor="#7ED957"
-                            android:textSize="14sp"
-                            android:fontFamily="@font/myfont"/>
-                    </LinearLayout>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#333333"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:paddingVertical="12dp"
-                    android:paddingHorizontal="16dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:background="?attr/selectableItemBackground">
-                    <RelativeLayout
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginEnd="12dp">
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/ic_bitcoin"
-                            android:padding="8dp"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="3"
-                            android:textColor="#FFFFFF"
-                            android:textSize="10sp"
-                            android:textStyle="bold"
-                            android:fontFamily="@font/myfont"
-                            android:paddingHorizontal="4dp"
-                            android:paddingVertical="2dp"
-                            android:layout_alignParentBottom="true"
-                            android:layout_alignParentEnd="true"
-                            android:layout_marginBottom="-4dp"
-                            android:layout_marginEnd="-4dp"/>
-                    </RelativeLayout>
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="memecoin"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp"
-                            android:fontFamily="@font/myfont"
-                            android:textStyle="bold"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="$5.9M MC"
-                            android:textColor="#AAAAAA"
-                            android:textSize="14sp"
-                            android:fontFamily="@font/myfont"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:gravity="end">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="$0.00582691"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp"
-                            android:fontFamily="@font/myfont"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="+137,468.98%"
-                            android:textColor="#7ED957"
-                            android:textSize="14sp"
-                            android:fontFamily="@font/myfont"/>
-                    </LinearLayout>
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:background="@drawable/rounded_card_dark"
+                    android:paddingVertical="8dp"
+                    android:layout_marginBottom="10dp">
+                    <include layout="@layout/item_token" />
+                    <View style="@style/DividerStyle" />
+                    <include layout="@layout/item_token" />
+                    <View style="@style/DividerStyle" />
+                    <include layout="@layout/item_token" />
                 </LinearLayout>
             </LinearLayout>
 
-            <RelativeLayout
+            <LinearLayout
+                android:id="@+id/section_lists"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp">
@@ -452,157 +233,107 @@
                     android:background="?attr/selectableItemBackgroundBorderless"/>
             </RelativeLayout>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/rounded_card_dark"
+                    android:paddingVertical="8dp">
+
+                    <include layout="@layout/item_list" /> <View style="@style/DividerStyle" />
+                    <include layout="@layout/item_list" />
+                    <View style="@style/DividerStyle" />
+                    <include layout="@layout/item_list" />
+                </LinearLayout>
+            </LinearLayout>
+
             <LinearLayout
+                android:id="@+id/section_people"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="@drawable/rounded_card_dark"
-                android:paddingVertical="8dp">
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Top People"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/myfont"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="See More"
+                        android:textColor="#895FD4"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/myfont"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackgroundBorderless"/>
+                </RelativeLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:paddingVertical="12dp"
-                    android:paddingHorizontal="16dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:background="?attr/selectableItemBackground">
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/ic_profile"
-                        android:padding="8dp"
-                        android:layout_marginEnd="12dp"/>
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Top Gainers"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp"
-                            android:fontFamily="@font/myfont"
-                            android:textStyle="bold"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="50 tokens"
-                            android:textColor="#AAAAAA"
-                            android:textSize="14sp"
-                            android:fontFamily="@font/myfont"/>
-                    </LinearLayout>
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_arrow_right"
-                        app:tint="#AAAAAA"/>
+                    android:orientation="vertical"
+                    android:background="@drawable/rounded_card_dark"
+                    android:paddingVertical="8dp">
+
+                    <include layout="@layout/item_person" />
+                    <View style="@style/DividerStyle" />
+                    <include layout="@layout/item_person" />
                 </LinearLayout>
+            </LinearLayout>
 
-                <View
+            <LinearLayout
+                android:id="@+id/section_dapps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#333333"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Popular DApps"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/myfont"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="See More"
+                        android:textColor="#895FD4"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/myfont"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackgroundBorderless"/>
+                </RelativeLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:paddingVertical="12dp"
-                    android:paddingHorizontal="16dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:background="?attr/selectableItemBackground">
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/ic_profile"
-                        android:padding="8dp"
-                        android:layout_marginEnd="12dp"/>
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Top Losers"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp"
-                            android:fontFamily="@font/myfont"
-                            android:textStyle="bold"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="50 tokens"
-                            android:textColor="#AAAAAA"
-                            android:textSize="14sp"
-                            android:fontFamily="@font/myfont"/>
-                    </LinearLayout>
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_arrow_right"
-                        app:tint="#AAAAAA"/>
-                </LinearLayout>
+                    android:orientation="vertical"
+                    android:background="@drawable/rounded_card_dark"
+                    android:paddingVertical="8dp">
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#333333"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:paddingVertical="12dp"
-                    android:paddingHorizontal="16dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:background="?attr/selectableItemBackground">
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/ic_profile"
-                        android:padding="8dp"
-                        android:layout_marginEnd="12dp"/>
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Meme"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp"
-                            android:fontFamily="@font/myfont"
-                            android:textStyle="bold"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="100 tokens"
-                            android:textColor="#AAAAAA"
-                            android:textSize="14sp"
-                            android:fontFamily="@font/myfont"/>
-                    </LinearLayout>
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_arrow_right"
-                        app:tint="#AAAAAA"/>
+                    <include layout="@layout/item_dapp" />
+                    <View style="@style/DividerStyle" />
+                    <include layout="@layout/item_dapp" />
                 </LinearLayout>
             </LinearLayout>
 

@@ -1,11 +1,13 @@
 package com.example.myphantom;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
@@ -23,6 +25,8 @@ public class AddWallet2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_wallet2);
+        Window window = getWindow();
+        window.setNavigationBarColor(Color.parseColor("#1C1C1C"));
         Button continueWithEmail = findViewById(R.id.continueWithEmail);
         Button otherOptions = findViewById(R.id.otherOptions);
         ViewUtils.addPressEffect(continueWithEmail);

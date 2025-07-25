@@ -1,9 +1,11 @@
 package com.example.myphantom;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -21,6 +23,8 @@ public class RecoveryPhraseTV extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recovery_phrase_tv);
+        Window window = getWindow();
+        window.setNavigationBarColor(Color.parseColor("#1C1C1C"));
         ImageView backBtn = findViewById(R.id.backIV);
         backBtn.setOnClickListener(v -> onBackPressed());
         EditText editRecoveryPhrase = findViewById(R.id.editRecoveryPhrase);

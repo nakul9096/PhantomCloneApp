@@ -1,407 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:fitsSystemWindows="true"
     android:layout_height="match_parent"
-    android:background="#121212">
+    android:background="#1C1C1C"
+    android:fitsSystemWindows="true">
 
     <LinearLayout
-        android:id="@+id/topBar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/toolbar_manage_tokens"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:paddingTop="16dp"  android:paddingBottom="16dp"
         android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
+        android:paddingEnd="16dp">
         <ImageView
-            android:id="@+id/backIcon"
-            android:layout_width="28dp" android:layout_height="28dp"
-            android:src="@drawable/ic_back"  app:tint="#FFFFFF"
-            android:contentDescription="Back" />
-
+            android:id="@+id/close_button_manage_tokens"
+            android:layout_width="24dp"
+            android:layout_marginEnd="10dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_back"
+            app:tint="#FFFFFF"/>
         <TextView
-            android:id="@+id/title"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_marginStart="16dp" android:text="Receive"
+            android:layout_height="wrap_content"
+            android:text="Receive"
             android:textColor="#FFFFFF"
-            android:fontFamily="@font/myfont"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/searchIcon"
-            android:layout_width="28dp" android:layout_height="28dp"
-            android:src="@drawable/ic_search"  app:tint="#FFFFFF"
-            android:contentDescription="Search" />
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/myfont"/>
     </LinearLayout>
 
-    <ScrollView
-        android:id="@+id/scrollContainer"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:paddingTop="0dp" android:paddingStart="16dp" android:paddingEnd="16dp"
-        android:paddingBottom="24dp" app:layout_constraintTop_toBottomOf="@id/topBar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+    <LinearLayout
+        android:id="@+id/search_bar_layout_manage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar_manage_tokens"
+        android:orientation="horizontal"
+        android:background="@drawable/rounded_card_dark_searchbar"
+        android:layout_margin="16dp"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="16dp"
+        android:gravity="center_vertical">
 
-        <LinearLayout
-            android:id="@+id/receiveList"
-            android:layout_width="match_parent"
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_search"
+            app:tint="#AAAAAA"
+            android:layout_marginEnd="10dp"/>
+
+        <EditText
+            android:id="@+id/search_edit_text_manage"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:background="@android:color/transparent"
+            android:hint="Search..."
+            android:textColorHint="#AAAAAA"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:fontFamily="@font/myfont"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:maxLines="1"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:id="@+id/solanacard"
-                android:backgroundTint="#2B2B2B"
-                android:layout_height="70dp"
-                android:layout_marginBottom="12dp"
-                android:background="@drawable/rounded_card_secondary"
-                android:orientation="horizontal"
-                android:padding="12dp"
-                android:gravity="center_vertical"
-                android:elevation="2dp">
+        <TextView
+            android:id="@+id/cancel_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CANCEL"
+            android:textColor="#9D8DFF"
+            android:textSize="16sp"
+            android:fontFamily="@font/myfont"
+            android:visibility="gone" />
+    </LinearLayout>
 
-                <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_solana" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:layout_marginStart="12dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Solana"
-                        android:textColor="#FFFFFF"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="2GTE...2BYF" android:textColor="#CCCCCC"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="40dp" android:layout_height="40dp"
-                    android:layout_marginEnd="12dp"
-                    android:id="@+id/solanaqr"
-                    android:src="@drawable/ic_qr_code"
-                    android:padding="8dp" android:background="@drawable/square_rounded_dark_bg" /> <ImageView
-                    android:layout_width="40dp" android:layout_height="40dp"
-                    android:src="@drawable/ic_copy"
-                    android:id="@+id/solanacopy"
-                    app:tint="#FFFFFF"
-                    android:padding="8dp" android:background="@drawable/square_rounded_dark_bg" /> </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:id="@+id/ethereumcard"
-                android:backgroundTint="#2B2B2B"
-                android:background="@drawable/rounded_card_secondary"
-                android:layout_marginBottom="12dp"
-                android:orientation="horizontal"
-                android:padding="12dp"
-                android:gravity="center_vertical"
-                android:elevation="2dp">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_eth" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:layout_marginStart="12dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Ethereum"
-                        android:textColor="#FFFFFF"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0x26b9...9f8A"
-                        android:textColor="#CCCCCC"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginEnd="12dp"
-                    android:src="@drawable/ic_qr_code"
-                    android:id="@+id/ethereumqr"
-                    android:padding="8dp"
-                    android:background="@drawable/square_rounded_dark_bg" />
-
-                <ImageView
-                    android:layout_width="40dp"
-                    app:tint="#FFFFFF"
-                    android:layout_height="40dp"
-                    android:id="@+id/ethereumcopy"
-                    android:src="@drawable/ic_copy"
-                    android:padding="8dp"
-                    android:background="@drawable/square_rounded_dark_bg" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:id="@+id/basecard"
-                android:layout_marginBottom="12dp"
-                android:backgroundTint="#2B2B2B"
-                android:orientation="horizontal"
-                android:background="@drawable/rounded_card_secondary"
-                android:padding="12dp"
-                android:gravity="center_vertical"
-                android:elevation="2dp">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_base" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:layout_marginStart="12dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Base" android:textColor="#FFFFFF"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0x26b9...9f8A"
-                        android:textColor="#CCCCCC"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginEnd="12dp"
-                    android:src="@drawable/ic_qr_code"
-                    android:padding="8dp"
-                    android:id="@+id/baseqr"
-                    android:background="@drawable/square_rounded_dark_bg" />
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:id="@+id/basecopy"
-                    android:src="@drawable/ic_copy"
-                    app:tint="#FFFFFF"
-                    android:padding="8dp"
-                    android:background="@drawable/square_rounded_dark_bg" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_marginBottom="12dp"
-                android:orientation="horizontal"
-                android:id="@+id/suicard"
-                android:backgroundTint="#2B2B2B"
-                android:padding="12dp"
-                android:background="@drawable/rounded_card_secondary"
-                android:gravity="center_vertical"
-                android:elevation="2dp">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_sui" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:layout_marginStart="12dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Sui"
-                        android:textColor="#FFFFFF"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0x4827...c2b3" android:textColor="#CCCCCC"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginEnd="12dp"
-                    android:src="@drawable/ic_qr_code"
-                    android:id="@+id/suiqr"
-                    android:padding="8dp"
-                    android:background="@drawable/square_rounded_dark_bg" />
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_copy"
-                    android:id="@+id/suicopy"
-                    app:tint="#FFFFFF"
-                    android:padding="8dp"
-                    android:background="@drawable/square_rounded_dark_bg" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_marginBottom="12dp"
-                android:orientation="horizontal"
-                android:padding="12dp"
-                android:id="@+id/polygoncard"
-                android:backgroundTint="#2B2B2B"
-                android:background="@drawable/rounded_card_secondary"
-                android:gravity="center_vertical"
-                android:elevation="2dp">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_polygon" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:layout_marginStart="12dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Polygon"
-                        android:textColor="#FFFFFF"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0x26b9...9f8A"
-                        android:textColor="#CCCCCC"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginEnd="12dp"
-                    android:id="@+id/polygonqr"
-                    android:src="@drawable/ic_qr_code"
-                    android:padding="8dp"
-                    android:background="@drawable/square_rounded_dark_bg" />
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    app:tint="#FFFFFF"
-                    android:src="@drawable/ic_copy"
-                    android:padding="8dp"
-                    android:id="@+id/polygoncopy"
-                    android:background="@drawable/square_rounded_dark_bg" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_marginBottom="12dp"
-                android:orientation="horizontal"
-                android:backgroundTint="#2B2B2B"
-                android:id="@+id/bitcoincard"
-                android:background="@drawable/rounded_card_secondary"
-                android:padding="12dp"
-                android:gravity="center_vertical"
-                android:elevation="2dp">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_bitcoin" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:layout_marginStart="12dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Bitcoin"
-                        android:textColor="#FFFFFF"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="bc1q...uygr" android:textColor="#CCCCCC"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginEnd="12dp"
-                    android:src="@drawable/ic_qr_code"
-                    android:padding="8dp"
-                    android:id="@+id/bitcoinqr"
-                    android:background="@drawable/square_rounded_dark_bg" />
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_copy"
-                    android:id="@+id/bitcoincopy"
-                    app:tint="#FFFFFF"
-                    android:padding="8dp"
-                    android:background="@drawable/square_rounded_dark_bg" />
-            </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/token_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/search_bar_layout_manage"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="16dp" />
+</RelativeLayout>

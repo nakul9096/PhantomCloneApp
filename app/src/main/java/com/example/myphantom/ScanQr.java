@@ -2,9 +2,11 @@ package com.example.myphantom;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.Toast;
 import android.Manifest;
@@ -46,7 +48,8 @@ public class ScanQr extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan_qr);
-
+        Window window = getWindow();
+        window.setNavigationBarColor(Color.parseColor("#1C1C1C"));
         Button grantCameraPermissions = findViewById(R.id.btn_grant_permissions);
         Button openSettings = findViewById(R.id.btn_open_settings);
 

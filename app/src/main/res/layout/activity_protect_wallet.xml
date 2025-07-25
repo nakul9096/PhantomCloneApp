@@ -1,14 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#1E1E1E"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="24dp"
-    tools:context=".ProtectWallet"
-    android:padding="24dp">
+    android:fitsSystemWindows="true"
+    android:background="#1E1E1E"
+    tools:context=".ProtectWallet">
 
-    <!-- Next button bottom aligned -->
     <Button
         android:id="@+id/nextButton"
         android:layout_width="match_parent"
@@ -18,94 +17,100 @@
         android:layout_marginBottom="16dp"
         android:background="@drawable/rounded_button"
         android:textColor="#FFFFFF"
-        android:fontFamily="@font/myfont" />
+        android:fontFamily="@font/myfont"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp" />
 
-    <!-- Content container -->
-    <LinearLayout
-        android:layout_above="@id/nextButton"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:layout_above="@id/nextButton"
+        android:fillViewport="true"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="24dp">
 
-        <!-- Optional lock image or Lottie animation -->
-        <com.airbnb.lottie.LottieAnimationView
-            android:layout_width="300dp"
-            android:layout_marginTop="20dp"
-            android:layout_height="300dp"
-            app:lottie_rawRes="@raw/lockanim"
-            app:lottie_autoPlay="true"
-            app:lottie_loop="true"
-            android:layout_marginBottom="16dp" />
-
-        <!-- Title -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Protect your wallet"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:fontFamily="@font/myfont"
-            android:layout_marginBottom="8dp" />
-
-        <!-- Description -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Adding biometric security will ensure that you are the only one that can access your wallet."
-            android:textColor="#CCCCCC"
-            android:textSize="15sp"
-            android:gravity="center"
-            android:fontFamily="@font/myfont"
-            android:layout_marginBottom="24dp" />
-
-        <!-- Toggle container -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/rounded_button_secondary"
-            android:padding="16dp"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="24dp">
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_biometrics"
-                android:layout_marginEnd="12dp" />
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="300dp"
+                android:layout_marginTop="20dp"
+                android:layout_height="300dp"
+                app:lottie_rawRes="@raw/lockanim"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                android:layout_marginBottom="16dp" />
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:text="Device"
-                    android:textColor="#FFFFFF"
-                    android:textSize="16sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/myfont" />
-
-                <TextView
-                    android:text="Use Device Authentication"
-                    android:textColor="#AAAAAA"
-                    android:textSize="14sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/myfont" />
-            </LinearLayout>
-
-            <Switch
-                android:id="@+id/deviceAuthSwitch"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:thumbTint="@color/purple_accent"
-                android:trackTint="@color/grey" />
-        </LinearLayout>
-    </LinearLayout>
+                android:text="Protect your wallet"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/myfont"
+                android:layout_marginBottom="8dp" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Adding biometric security will ensure that you are the only one that can access your wallet."
+                android:textColor="#CCCCCC"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:fontFamily="@font/myfont"
+                android:layout_marginBottom="24dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/rounded_button_secondary"
+                android:padding="16dp"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="24dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_biometrics"
+                    android:layout_marginEnd="12dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:text="Device"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/myfont" />
+
+                    <TextView
+                        android:text="Use Device Authentication"
+                        android:textColor="#AAAAAA"
+                        android:textSize="14sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/myfont" />
+                </LinearLayout>
+
+                <Switch
+                    android:id="@+id/deviceAuthSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:thumbTint="@color/purple_accent"
+                    android:trackTint="@color/grey" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </RelativeLayout>

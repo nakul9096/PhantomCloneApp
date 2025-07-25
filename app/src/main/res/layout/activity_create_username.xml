@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="#121212"
+    android:background="#1C1C1C"
     android:layout_width="match_parent"
     android:fitsSystemWindows="true"
     android:layout_height="match_parent">
@@ -11,7 +11,6 @@
         android:clipToPadding="false"
         android:layout_marginTop="24dp"
         android:paddingBottom="100dp"
-        android:paddingTop="24dp"
         android:paddingStart="24dp"
         android:paddingEnd="24dp">
 
@@ -65,6 +64,7 @@
                 android:textSize="24sp"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"
+                android:fontFamily="@font/myfont"
                 android:layout_marginBottom="8dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -73,6 +73,7 @@
                 android:text="Personalize your account with a unique name.\nUsernames can be changed later on."
                 android:textSize="14sp"
                 android:textColor="#CCCCCC"
+                android:fontFamily="@font/myfont"
                 android:layout_marginBottom="32dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -96,9 +97,10 @@
 
                 <EditText
                     android:id="@+id/usernameInput"
-                    android:hint="ValuedPuma3021"
+                    android:hint="ValuedPuma9096"
                     android:textColor="@android:color/white"
                     android:textColorHint="#888888"
+                    android:fontFamily="@font/myfont"
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -109,12 +111,14 @@
                     android:src="@drawable/ic_cross"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
+                    android:id="@+id/clear_text"
                     android:contentDescription="Clear" />
             </LinearLayout>
 
             <TextView
                 android:text="✔ Username available"
                 android:layout_marginTop="8dp"
+                android:fontFamily="@font/myfont"
                 android:layout_marginStart="5dp"
                 android:textColor="#00C853"
                 android:textSize="14sp"
@@ -130,6 +134,7 @@
         android:layout_gravity="bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/myfont"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"

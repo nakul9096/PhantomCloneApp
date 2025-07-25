@@ -1,8 +1,10 @@
 package com.example.myphantom;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -20,6 +22,8 @@ public class ConnectWallet extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connect_wallet);
         ImageView backButton = findViewById(R.id.backButton);
+        Window window = getWindow();
+        window.setNavigationBarColor(Color.parseColor("#1C1C1C"));
         backButton.setOnClickListener(v -> onBackPressed());
         CardView createAccountCard = findViewById(R.id.createAccountCard);
         CardView connectHardwareWallet = findViewById(R.id.connectHardwareCard);

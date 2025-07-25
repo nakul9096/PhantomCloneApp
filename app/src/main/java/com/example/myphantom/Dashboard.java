@@ -12,7 +12,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Dashboard extends AppCompatActivity {
+public class Dashboard extends AppCompatActivity implements HomeFragment.OnFragmentInteractionListener {
     private BottomNavigationView bottomNavigationView;
     private FrameLayout navHostFragment;
 
@@ -72,5 +72,10 @@ public class Dashboard extends AppCompatActivity {
 
         fragmentTransaction.replace(R.id.nav_host_fragment, fragment, tag);
         fragmentTransaction.commit();
+    }
+    @Override
+    public void onNavigateToFragment(int menuItemId) {
+        // When HomeFragment tells us to navigate, set the selected item in BottomNavigationView
+        bottomNavigationView.setSelectedItemId(menuItemId);
     }
 }

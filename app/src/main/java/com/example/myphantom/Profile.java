@@ -1,8 +1,10 @@
 package com.example.myphantom;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -15,6 +17,8 @@ public class Profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         ImageView settingsIcon = findViewById(R.id.settingsIcon);
+        Window window = getWindow();
+        window.setNavigationBarColor(Color.parseColor("#1C1C1C"));
         ImageView backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(v -> onBackPressed());
         ImageView editIcon = findViewById(R.id.editIcon);

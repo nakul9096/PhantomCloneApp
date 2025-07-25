@@ -1,8 +1,10 @@
 package com.example.myphantom;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -18,6 +20,8 @@ public class EditAccount extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_account);
+        Window window = getWindow();
+        window.setNavigationBarColor(Color.parseColor("#1C1C1C"));
         LinearLayout accName = findViewById(R.id.accName);
         LinearLayout accAddress = findViewById(R.id.accAdrress);
         LinearLayout notification = findViewById(R.id.notification);

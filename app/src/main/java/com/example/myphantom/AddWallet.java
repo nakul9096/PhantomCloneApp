@@ -1,10 +1,12 @@
 package com.example.myphantom;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -19,6 +21,8 @@ public class AddWallet extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_wallet);
+        Window window = getWindow();
+        window.setNavigationBarColor(Color.parseColor("#1C1C1C"));
         TextView createseedphrasewallett = findViewById(R.id.createseedphrasewallettv);
         ViewUtils.addPressEffect(createseedphrasewallett);
         createseedphrasewallett.setOnClickListener(new View.OnClickListener() {

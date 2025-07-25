@@ -19,6 +19,18 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".YourRecoveryPhrases"
+            android:exported="false" />
+        <activity
+            android:name=".ManageTokens"
+            android:exported="false" />
+        <activity
+            android:name=".YouReceive"
+            android:exported="false" />
+        <activity
+            android:name=".Notification"
+            android:exported="false" />
+        <activity
             android:name=".WatchAddress"
             android:exported="false" />
         <activity
@@ -41,9 +53,6 @@
             android:exported="false" />
         <activity
             android:name=".ViewProfile"
-            android:exported="false" />
-        <activity
-            android:name=".Dashboard"
             android:exported="false" />
         <activity
             android:name=".Setting"
@@ -101,6 +110,9 @@
             android:exported="false" />
         <activity
             android:name=".AddWallet"
+            android:exported="false" />
+        <activity
+            android:name=".Dashboard"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

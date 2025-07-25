@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#121212"
+    android:background="#1C1C1C"
     android:fitsSystemWindows="true">
 
     <LinearLayout
@@ -13,24 +13,22 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:background="#121212">
+        android:paddingEnd="16dp">
 
         <ImageView
             android:id="@+id/back_button_settings"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@android:drawable/ic_menu_close_clear_cancel"  app:tint="#FFFFFF"
-            android:clickable="true"
-            android:focusable="true"
-            android:background="?attr/selectableItemBackgroundBorderless"/>
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_back"
+            app:tint="#FFFFFF"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="Settings"
             android:textColor="#FFFFFF"
-            android:textSize="18sp"
+            android:textSize="24sp"
             android:textStyle="bold"
             android:fontFamily="@font/myfont"
             android:layout_marginStart="16dp"/>
@@ -52,182 +50,441 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@drawable/rounded_button_secondary"
-                android:backgroundTint="#2B2B2B"
-                android:paddingVertical="12dp"
-                android:paddingHorizontal="16dp"
+                android:layout_height="50dp"
+                android:background="@drawable/rounded_button_options"
                 android:gravity="center_vertical"
+                android:paddingHorizontal="16dp"
                 android:layout_marginBottom="24dp">
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:id="@+id/search_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:src="@drawable/ic_search"
-                    app:tint="#AAAAAA"/>
+                    app:tint="#AAAAAA"
+                    android:layout_marginEnd="12dp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <EditText
+                    android:id="@+id/search_edit_text"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:text="Search..."
-                    android:textColor="#AAAAAA"
+                    android:hint="Search..."
+                    android:background="@android:color/transparent"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#AAAAAA"
                     android:textSize="16sp"
                     android:fontFamily="@font/myfont"
-                    android:layout_marginStart="12dp"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/settings_profile_item"
-                style="@style/SettingsListItem"
-                android:layout_marginBottom="24dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:background="@drawable/rounded_button_secondary">
+                    android:singleLine="true"
+                    android:cursorVisible="false"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"/>
 
                 <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_profile" android:padding="8dp"
-                /> <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="\@LushGlow3227"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:fontFamily="@font/myfont"
-                android:layout_marginStart="16dp"/>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_arrow_right" app:tint="#AAAAAA"/>
+                    android:id="@+id/cancel_button"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@android:drawable/ic_menu_close_clear_cancel"
+                    app:tint="#AAAAAA"
+                    android:visibility="gone"/>
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/first_section_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="@drawable/rounded_card_dark" android:paddingVertical="8dp"
-                android:layout_marginBottom="24dp">
-
-                <LinearLayout style="@style/SettingsListItem" android:id="@+id/settings_manage_accounts">
-                    <ImageView style="@style/SettingsListItemIcon" android:src="@drawable/ic_manage"/>
-                    <TextView style="@style/SettingsListItemText" android:text="Manage Accounts"/>
-                    <TextView style="@style/SettingsListItemTrailingText" android:text="1"/>
-                    <ImageView style="@style/SettingsListItemArrow"/>
-                </LinearLayout>
-
-                <View style="@style/SettingsListDivider"/>
-
-                <LinearLayout style="@style/SettingsListItem" android:id="@+id/settings_preferences">
-                    <ImageView style="@style/SettingsListItemIcon" android:src="@drawable/ic_preferences"/>
-                    <TextView style="@style/SettingsListItemText" android:text="Preferences"/>
-                    <ImageView style="@style/SettingsListItemArrow"/>
-                </LinearLayout>
-
-                <View style="@style/SettingsListDivider"/>
-
-                <LinearLayout style="@style/SettingsListItem" android:id="@+id/settings_security_privacy">
-                    <ImageView style="@style/SettingsListItemIcon" android:src="@drawable/ic_preferences"/>
-                    <TextView style="@style/SettingsListItemText" android:text="Security &amp; Privacy"/>
-                    <ImageView style="@style/SettingsListItemArrow"/>
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/rounded_card_dark"
-                android:paddingVertical="8dp"
-                android:layout_marginBottom="24dp">
-
-                <LinearLayout style="@style/SettingsListItem" android:id="@+id/settings_active_networks">
-                    <ImageView style="@style/SettingsListItemIcon" android:src="@drawable/ic_preferences"/>
-                    <TextView style="@style/SettingsListItemText" android:text="Active Networks"/>
-                    <TextView style="@style/SettingsListItemTrailingText" android:text="6"/>
-                    <ImageView style="@style/SettingsListItemArrow"/>
-                </LinearLayout>
-
-                <View style="@style/SettingsListDivider"/>
-
-                <LinearLayout style="@style/SettingsListItem" android:id="@+id/settings_address_book">
-                    <ImageView style="@style/SettingsListItemIcon" android:src="@drawable/ic_preferences"/>
-                    <TextView style="@style/SettingsListItemText" android:text="Address Book"/>
-                    <ImageView style="@style/SettingsListItemArrow"/>
-                </LinearLayout>
-
-                <View style="@style/SettingsListDivider"/>
-
-                <LinearLayout style="@style/SettingsListItem" android:id="@+id/settings_connected_apps">
-                    <ImageView style="@style/SettingsListItemIcon" android:src="@drawable/ic_preferences"/>
-                    <TextView style="@style/SettingsListItemText" android:text="Connected Apps"/>
-                    <ImageView style="@style/SettingsListItemArrow"/>
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/rounded_card_dark"
-                android:paddingVertical="8dp"
-                android:layout_marginBottom="24dp">
-
-                <LinearLayout style="@style/SettingsListItem" android:id="@+id/settings_developer_settings">
-                    <ImageView style="@style/SettingsListItemIcon" android:src="@drawable/ic_preferences"/>
-                    <TextView style="@style/SettingsListItemText" android:text="Developer Settings"/>
-                    <ImageView style="@style/SettingsListItemArrow"/>
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/rounded_card_dark"
-                android:paddingVertical="8dp"
-                android:layout_marginBottom="24dp">
-
-                <LinearLayout style="@style/SettingsListItem" android:id="@+id/settings_help_support">
-                    <ImageView style="@style/SettingsListItemIcon" android:src="@drawable/ic_preferences"/>
-                    <TextView style="@style/SettingsListItemText" android:text="Help &amp; Support"/>
-                    <ImageView style="@style/SettingsListItemExternalLink"/> </LinearLayout>
-
-                <View style="@style/SettingsListDivider"/>
-
-                <LinearLayout style="@style/SettingsListItem" android:id="@+id/settings_invite_friends">
-                    <ImageView style="@style/SettingsListItemIcon" android:src="@drawable/ic_preferences"/>
-                    <TextView style="@style/SettingsListItemText" android:text="Invite your friends"/>
-                    <ImageView style="@style/SettingsListItemShare"/> </LinearLayout>
-
-                <View style="@style/SettingsListDivider"/>
-
-                <LinearLayout style="@style/SettingsListItem" android:id="@+id/settings_about_phantom">
-                    <ImageView style="@style/SettingsListItemIcon" android:src="@drawable/ic_preferences"/>
-                    <TextView style="@style/SettingsListItemText" android:text="About Phantom"/>
-                    <ImageView style="@style/SettingsListItemArrow"/>
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/rounded_card_dark"
                 android:paddingVertical="8dp"
                 android:layout_marginBottom="16dp">
 
-                <LinearLayout style="@style/SettingsListItem" android:id="@+id/settings_submit_feedback">
-                    <ImageView style="@style/SettingsListItemIcon" android:src="@drawable/ic_preferences"/>
-                    <TextView style="@style/SettingsListItemText" android:text="Submit Feedback"/>
-                    <ImageView style="@style/SettingsListItemExternalLink"/>
+                <LinearLayout
+                    android:id="@+id/manage_accounts_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingVertical="12dp"
+                    android:paddingHorizontal="16dp"
+                    android:background="@drawable/rounded_button_options">
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_manage"
+                        app:tint="#FFFFFF"
+                        android:layout_marginEnd="16dp"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Manage Accounts"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/myfont"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1"
+                        android:textColor="#AAAAAA"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/myfont"
+                        android:layout_marginEnd="8dp"/>
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_arrow_right"
+                        app:tint="#AAAAAA"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#333333"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"/>
+
+                <LinearLayout
+                    android:id="@+id/preferences_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:paddingVertical="12dp"
+                    android:paddingHorizontal="16dp"
+                    android:background="@drawable/rounded_button_options">
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_preferences"
+                        app:tint="#FFFFFF"
+                        android:layout_marginEnd="16dp"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Preferences"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/myfont"/>
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_arrow_right"
+                        app:tint="#AAAAAA"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#333333"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"/>
+
+                <LinearLayout
+                    android:id="@+id/security_privacy_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:paddingVertical="12dp"
+                    android:paddingHorizontal="16dp"
+                    android:background="@drawable/rounded_button_options">
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_security"
+                        app:tint="#FFFFFF"
+                        android:layout_marginEnd="16dp"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Security &amp; Privacy"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/myfont"/>
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_arrow_right"
+                        app:tint="#AAAAAA"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#333333"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"/>
+
+                <LinearLayout
+                    android:id="@+id/active_networks_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:paddingVertical="12dp"
+                    android:paddingHorizontal="16dp"
+                    android:background="@drawable/rounded_button_options">
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_active_network"
+                        app:tint="#B39DDB"
+                        android:layout_marginEnd="16dp"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Active Networks"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/myfont"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="6"
+                        android:textColor="#AAAAAA"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/myfont"
+                        android:layout_marginEnd="8dp"/>
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_arrow_right"
+                        app:tint="#AAAAAA"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#333333"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"/>
+
+                <LinearLayout
+                    android:id="@+id/address_book_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="10dp"
+                    android:paddingVertical="12dp"
+                    android:paddingHorizontal="16dp"
+                    android:background="@drawable/rounded_button_options">
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_book"
+                        app:tint="#FFFFFF"
+                        android:layout_marginEnd="16dp"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Address Book"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/myfont"/>
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_arrow_right"
+                        app:tint="#AAAAAA"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#333333"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"/>
+
+                <LinearLayout
+                    android:id="@+id/connected_apps_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingVertical="12dp"
+                    android:paddingHorizontal="16dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rounded_button_options">
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_connected_apps"
+                        app:tint="#FFFFFF"
+                        android:layout_marginEnd="16dp"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Connected Apps"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/myfont"/>
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_arrow_right"
+                        app:tint="#AAAAAA"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#333333"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"/>
+
+                <LinearLayout
+                    android:id="@+id/developer_settings_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingVertical="12dp"
+                    android:paddingHorizontal="16dp"
+                    android:background="@drawable/rounded_button_options">
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_settings"
+                        app:tint="#B39DDB"
+                        android:layout_marginEnd="16dp"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Developer Settings"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/myfont"/>
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_arrow_right"
+                        app:tint="#AAAAAA"/>
                 </LinearLayout>
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/second_section_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="8dp">
+
+                <LinearLayout
+                    android:id="@+id/help_support_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingVertical="12dp"
+                    android:paddingHorizontal="16dp"
+                    android:background="@drawable/rounded_button_options">
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_external_link"
+                        app:tint="#FFFFFF"
+                        android:layout_marginEnd="16dp"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Help &amp; Support"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/myfont"/>
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_external_link"
+                        app:tint="#AAAAAA"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#333333"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"/>
+
+                <LinearLayout
+                    android:id="@+id/invite_friends_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingVertical="12dp"
+                    android:paddingHorizontal="16dp"
+                    android:background="@drawable/rounded_button_options">
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_invite"
+                        app:tint="#FFFFFF"
+                        android:layout_marginEnd="16dp"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Invite your friends"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/myfont"/>
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_share"
+                        app:tint="#AAAAAA"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#333333"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"/>
+
+                <LinearLayout
+                    android:id="@+id/about_phantom_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingVertical="12dp"
+                    android:layout_marginTop="10dp"
+                    android:paddingHorizontal="16dp"
+                    android:background="@drawable/rounded_button_options">
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_info_circle"
+                        app:tint="#FFFFFF"
+                        android:layout_marginEnd="16dp"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="About Phantom"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/myfont"/>
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_arrow_right"
+                        app:tint="#AAAAAA"/>
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
-
 </RelativeLayout>

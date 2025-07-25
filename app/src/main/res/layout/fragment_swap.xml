@@ -51,8 +51,8 @@
             android:paddingTop="16dp"
             android:paddingBottom="16dp">
 
-            <!-- You Pay Section -->
             <LinearLayout
+                android:id="@+id/you_pay_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -74,37 +74,45 @@
                     android:layout_height="wrap_content">
 
                     <EditText
+                        android:id="@+id/you_pay_amount_et"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="0"
+                        android:hint="0"
+                        android:textColorHint="#777777"
                         android:textColor="#FFFFFF"
                         android:textSize="32sp"
                         android:textStyle="bold"
                         android:fontFamily="@font/myfont"
                         android:background="@android:color/transparent"
                         android:inputType="numberDecimal"
-                        android:paddingEnd="100dp" /> <!-- To make space for the token selector -->
+                        android:paddingEnd="120dp"
+                        android:textCursorDrawable="@drawable/custom_cursor"/>
 
                     <LinearLayout
+                        android:id="@+id/you_pay_token_selector"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
                         android:background="@drawable/rounded_button_secondary"
-                        android:paddingHorizontal="8dp"
-                        android:paddingVertical="4dp"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="6dp"
                         android:gravity="center_vertical"
                         android:clickable="true"
                         android:focusable="true">
 
                         <ImageView
+                            android:id="@+id/you_pay_token_icon"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:src="@drawable/ic_solana"
-                            android:layout_marginEnd="4dp"/>
+                            app:tint="#FFFFFF"
+                            android:layout_marginEnd="6dp"
+                            android:scaleType="centerCrop"/>
 
                         <TextView
+                            android:id="@+id/you_pay_token_symbol"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="SOL"
@@ -112,38 +120,44 @@
                             android:textSize="16sp"
                             android:textStyle="bold"
                             android:fontFamily="@font/myfont"
-                            android:layout_marginEnd="4dp"/>
+                            android:layout_marginEnd="6dp"/>
 
                         <ImageView
-                            android:layout_width="16dp"
-                            android:layout_height="16dp"
-                            android:src="@android:drawable/btn_dropdown" />
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_down_arrow"
+                            app:tint="#FFFFFF"/>
                     </LinearLayout>
                 </RelativeLayout>
 
                 <TextView
+                    android:id="@+id/you_pay_balance_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0 SOL"
+                    android:text="Balance: 0 SOL"
                     android:textColor="#AAAAAA"
                     android:textSize="14sp"
                     android:fontFamily="@font/myfont"
                     android:layout_marginTop="8dp"/>
             </LinearLayout>
+
             <ImageView
+                android:id="@+id/swap_direction_button"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:src="@drawable/ic_swap"
-            android:background="@drawable/rounded_button_secondary"
-            android:padding="10dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="-24dp"
-            android:layout_marginBottom="-24dp"
-            android:elevation="4dp"
-            android:clickable="true"
-            android:focusable="true"/>
+                app:tint="#FFFFFF"
+                android:background="@drawable/rounded_button_secondary"
+                android:padding="10dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="-24dp"
+                android:layout_marginBottom="-24dp"
+                android:elevation="4dp"
+                android:clickable="true"
+                android:focusable="true"/>
 
             <LinearLayout
+                android:id="@+id/you_receive_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -164,7 +178,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <EditText
+                    <TextView
+                        android:id="@+id/you_receive_amount_tv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="0"
@@ -173,29 +188,33 @@
                         android:textStyle="bold"
                         android:fontFamily="@font/myfont"
                         android:background="@android:color/transparent"
-                        android:inputType="numberDecimal"
-                        android:paddingEnd="100dp"/>
+                        android:maxLines="2"
+                        android:paddingEnd="120dp"/>
 
                     <LinearLayout
+                        android:id="@+id/you_receive_token_selector"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
                         android:background="@drawable/rounded_button_secondary"
-                        android:paddingHorizontal="8dp"
-                        android:paddingVertical="4dp"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="6dp"
                         android:gravity="center_vertical"
                         android:clickable="true"
                         android:focusable="true">
 
                         <ImageView
+                            android:id="@+id/you_receive_token_icon"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:src="@drawable/ic_usdc"
-                            android:layout_marginEnd="4dp"/>
+                            android:layout_marginEnd="6dp"
+                            android:scaleType="centerCrop"/>
 
                         <TextView
+                            android:id="@+id/you_receive_token_symbol"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="USDC"
@@ -203,27 +222,107 @@
                             android:textSize="16sp"
                             android:textStyle="bold"
                             android:fontFamily="@font/myfont"
-                            android:layout_marginEnd="4dp"/>
+                            android:layout_marginEnd="6dp"/>
 
                         <ImageView
-                            android:layout_width="16dp"
-                            android:layout_height="16dp"
-                            android:src="@android:drawable/btn_dropdown"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_down_arrow"
                             app:tint="#FFFFFF"/>
                     </LinearLayout>
                 </RelativeLayout>
 
                 <TextView
+                    android:id="@+id/you_receive_balance_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0 USDC"
+                    android:text="Balance: 0 USDC"
                     android:textColor="#AAAAAA"
                     android:textSize="14sp"
                     android:fontFamily="@font/myfont"
                     android:layout_marginTop="8dp"/>
             </LinearLayout>
 
-            <!-- Trending Tokens Section -->
+            <LinearLayout
+                android:id="@+id/payment_details_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/rounded_card_dark"
+                    android:padding="16dp"
+                    android:layout_marginBottom="16dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp">
+                        <TextView
+                            android:id="@+id/slippage_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Slippage"
+                            android:textColor="#AAAAAA"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/myfont"/>
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_info_circle"
+                            app:tint="#AAAAAA"
+                            android:layout_toEndOf="@id/slippage_label"
+                            android:layout_marginStart="4dp"
+                            android:layout_centerVertical="true"
+                            android:id="@+id/slippage_info_icon"/>
+                        <TextView
+                            android:id="@+id/slippage_value_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:text="0.5%"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/myfont"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/price_impact_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Price Impact"
+                            android:textColor="#AAAAAA"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/myfont"/>
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_info_circle"
+                            app:tint="#AAAAAA"
+                            android:layout_toEndOf="@id/price_impact_label"
+                            android:layout_marginStart="4dp"
+                            android:layout_centerVertical="true"
+                            android:id="@+id/price_impact_info_icon"/>
+                        <TextView
+                            android:id="@+id/price_impact_value_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:text="&lt; 0.01%"
+                            android:textColor="#7ED957"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/myfont"/>
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -240,289 +339,27 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/ic_filter"
-                app:tint="#AAAAAA"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:clickable="true"
-                android:focusable="true"
-                android:background="?attr/selectableItemBackgroundBorderless"/>
+                    app:tint="#AAAAAA"
+                    android:layout_alignParentEnd="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"/>
             </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:padding="18dp"
                 android:background="@drawable/rounded_card_dark"
                 android:paddingVertical="8dp">
 
-                <!-- Token 1: Dege -->
-                <LinearLayout
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/trending_tokens_recycler_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:paddingVertical="12dp"
-                    android:paddingHorizontal="16dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:background="?attr/selectableItemBackground">
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/ic_profile"
-                    android:padding="8dp"
-                    android:scaleType="centerCrop"
-                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
-                    android:layout_marginEnd="12dp"/>
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Dege"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp"
-                            android:fontFamily="@font/myfont"
-                            android:textStyle="bold"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="$25M MC"
-                            android:textColor="#AAAAAA"
-                            android:textSize="14sp"
-                            android:fontFamily="@font/myfont"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:gravity="end">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="$0.0323"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp"
-                            android:fontFamily="@font/myfont"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="+257.73%"
-                            android:textColor="#7ED957"
-                            android:textSize="14sp"
-                            android:fontFamily="@font/myfont"/>
-                    </LinearLayout>
-                </LinearLayout>
+                    android:nestedScrollingEnabled="false" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#333333"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"/>
-
-                <!-- Token 2: MEMELESS -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:paddingVertical="12dp"
-                    android:paddingHorizontal="16dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:background="?attr/selectableItemBackground">
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/ic_profile"
-                    android:padding="8dp"
-                    android:scaleType="centerCrop"
-                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
-                    android:layout_marginEnd="12dp"/>
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="MEMELESS"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp"
-                            android:fontFamily="@font/myfont"
-                            android:textStyle="bold"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="$2.4M MC"
-                            android:textColor="#AAAAAA"
-                            android:textSize="14sp"
-                            android:fontFamily="@font/myfont"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:gravity="end">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="$0.00241571"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp"
-                            android:fontFamily="@font/myfont"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="+809.05%"
-                            android:textColor="#7ED957"
-                            android:textSize="14sp"
-                            android:fontFamily="@font/myfont"/>
-                    </LinearLayout>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#333333"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"/>
-
-                <!-- Token 3: SAVIOUR -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:paddingVertical="12dp"
-                    android:paddingHorizontal="16dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:background="?attr/selectableItemBackground">
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/ic_profile"
-                    android:padding="8dp"
-                    android:scaleType="centerCrop"
-                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
-                    android:layout_marginEnd="12dp"/>
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="SAVIOUR"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp"
-                            android:fontFamily="@font/myfont"
-                            android:textStyle="bold"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="$491K MC"
-                            android:textColor="#AAAAAA"
-                            android:textSize="14sp"
-                            android:fontFamily="@font/myfont"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:gravity="end">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="$0.00039268"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp"
-                            android:fontFamily="@font/myfont"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="+6,433.27%"
-                            android:textColor="#7ED957"
-                            android:textSize="14sp"
-                            android:fontFamily="@font/myfont"/>
-                    </LinearLayout>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#333333"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"/>
-
-                <!-- Token 4: BONKHOUSE -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:paddingVertical="12dp"
-                    android:paddingHorizontal="16dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:background="?attr/selectableItemBackground">
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/ic_profile"
-                    android:padding="8dp"
-                    android:scaleType="centerCrop"
-                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
-                    android:layout_marginEnd="12dp"/>
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="BONKHOUSE"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp"
-                            android:fontFamily="@font/myfont"
-                            android:textStyle="bold"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="$915K MC"
-                            android:textColor="#AAAAAA"
-                            android:textSize="14sp"
-                            android:fontFamily="@font/myfont"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:gravity="end">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="$0.00085901"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp"
-                            android:fontFamily="@font/myfont"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="-29.45%"
-                            android:textColor="#FF5722"
-                            android:textSize="14sp"
-                            android:fontFamily="@font/myfont"/>
-                    </LinearLayout>
-                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

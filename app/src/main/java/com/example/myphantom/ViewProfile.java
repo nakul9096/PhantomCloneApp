@@ -1,8 +1,10 @@
 package com.example.myphantom;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -21,6 +23,8 @@ public class ViewProfile extends AppCompatActivity {
         ImageView backbtn = findViewById(R.id.backbtn);
         backbtn.setOnClickListener(v -> onBackPressed());
         Button editProfilebtn = findViewById(R.id.editProfilebtn);
+        Window window = getWindow();
+        window.setNavigationBarColor(Color.parseColor("#1C1C1C"));
         ViewUtils.addPressEffect(editProfilebtn);
         editProfilebtn.setOnClickListener(new View.OnClickListener() {
             @Override

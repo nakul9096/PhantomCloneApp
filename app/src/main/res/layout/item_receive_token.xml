@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="#2B2B2B"
+    android:background="@drawable/rounded_card_secondary"
+    android:layout_marginBottom="12dp"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:gravity="center_vertical"
+    android:elevation="2dp">
+
+    <ImageView
+        android:id="@+id/token_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_no_nfts" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginStart="12dp">
+
+        <TextView
+            android:id="@+id/token_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Token Name"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/token_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:textColor="#CCCCCC"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/token_qr"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="12dp"
+        android:src="@drawable/ic_qr_code"
+        android:padding="8dp"
+        android:background="@drawable/square_rounded_dark_bg" />
+
+    <ImageView
+        android:id="@+id/token_copy"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_copy"
+        app:tint="#FFFFFF"
+        android:padding="8dp"
+        android:background="@drawable/square_rounded_dark_bg" />
+</LinearLayout>

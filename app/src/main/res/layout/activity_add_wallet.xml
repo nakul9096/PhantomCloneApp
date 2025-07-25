@@ -1,162 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#1E1E1E"
-    android:layout_marginBottom="24dp"
-    android:padding="24dp">
+    android:fitsSystemWindows="true"
+    android:background="#1E1E1E">
 
-    <!-- Scrollable content above -->
     <ScrollView
         android:id="@+id/scrollContent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_above="@id/bottomLayout"
-        android:layout_alignParentTop="true">
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:padding="24dp">
 
             <com.airbnb.lottie.LottieAnimationView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginBottom="16dp"
+                android:contentDescription="Wallet animation"
                 app:lottie_rawRes="@raw/mywalletanim"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add a Wallet"
-            android:textColor="#FFFFFF"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:fontFamily="@font/myfont"
-            android:layout_marginBottom="4dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add a Wallet"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/myfont"
+                android:layout_marginBottom="4dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Login or import an existing wallet"
-            android:textColor="#CCCCCC"
-            android:textSize="20sp"
-            android:fontFamily="@font/myfont"
-            android:layout_marginBottom="24dp" />
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_setup"
-            android:layout_marginEnd="12dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Login or import an existing wallet"
+                android:textColor="#CCCCCC"
+                android:textSize="20sp"
+                android:fontFamily="@font/myfont"
+                android:layout_marginBottom="24dp" />
 
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal">
 
-                <TextView
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:text="Seamless setup"
-                    android:textColor="#FFFFFF"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/myfont" />
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="12dp"
+                    android:contentDescription="Setup icon"
+                    android:src="@drawable/ic_setup" />
 
-                <TextView
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:text="Create a wallet using a Google or Apple account and start exploring web3 with ease"
-                    android:textColor="#AAAAAA"
-                    android:textSize="15sp"
-                    android:fontFamily="@font/myfont" />
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Seamless setup"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/myfont" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Create a wallet using a Google or Apple account and start exploring web3 with ease"
+                        android:textColor="#AAAAAA"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/myfont" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_security"
-            android:layout_marginEnd="12dp" />
 
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal">
 
-                <TextView
-                    android:text="Enhanced security"
-                    android:textColor="#FFFFFF"
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/myfont" />
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="12dp"
+                    android:contentDescription="Security icon"
+                    android:src="@drawable/ic_security" />
 
-                <TextView
-                    android:text="Your wallet is stored securely and decentralized across multiple factors"
-                    android:textColor="#AAAAAA"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:textSize="15sp"
-                    android:fontFamily="@font/myfont" />
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Enhanced security"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/myfont" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Your wallet is stored securely and decentralized across multiple factors"
+                        android:textColor="#AAAAAA"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/myfont" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_recovery"
-            android:layout_marginEnd="12dp" />
 
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:layout_marginBottom="32dp"
+                android:orientation="horizontal">
 
-                <TextView
-                    android:text="Easy recovery"
-                    android:textColor="#FFFFFF"
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/myfont" />
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="12dp"
+                    android:contentDescription="Recovery icon"
+                    android:src="@drawable/ic_recovery" />
 
-                <TextView
-                    android:text="Recover access to your wallet with your Google or Apple account and a 4-digit PIN"
-                    android:textColor="#AAAAAA"
-                    android:textSize="15sp"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:fontFamily="@font/myfont" />
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Easy recovery"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/myfont" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Recover access to your wallet with your Google or Apple account and a 4-digit PIN"
+                        android:textColor="#AAAAAA"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/myfont" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
@@ -166,27 +170,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="24dp">
 
         <Button
+            android:id="@+id/continueWithEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="18dp"
-            android:id="@+id/continueWithEmail"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/rounded_button"
             android:fontFamily="@font/myfont"
             android:text="Continue with Email"
             android:textColor="#FFFFFF" />
 
         <TextView
+            android:id="@+id/createseedphrasewallettv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/myfont"
+            android:paddingBottom="16dp"
             android:text="Create a seed phrase wallet"
             android:textColor="#8888FF"
-            android:id="@+id/createseedphrasewallettv"
-            android:textSize="16sp"
-            android:fontFamily="@font/myfont"
-            android:layout_gravity="center_horizontal"
-            android:paddingBottom="8dp" />
+            android:textSize="16sp" />
     </LinearLayout>
+
 </RelativeLayout>

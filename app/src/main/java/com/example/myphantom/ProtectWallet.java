@@ -1,8 +1,10 @@
 package com.example.myphantom;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.Switch;
 import android.widget.Toast;
@@ -21,6 +23,8 @@ public class ProtectWallet extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_protect_wallet);
         deviceAuthSwitch = findViewById(R.id.deviceAuthSwitch);
+        Window window = getWindow();
+        window.setNavigationBarColor(Color.parseColor("#1C1C1C"));
         Executor executor = ContextCompat.getMainExecutor(this);
         Button nextButon = findViewById(R.id.nextButton);
         ViewUtils.addPressEffect(nextButon);
